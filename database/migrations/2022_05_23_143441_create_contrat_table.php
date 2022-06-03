@@ -13,7 +13,7 @@ class CreateContratTable extends Migration
      */
     public function up()
     {
-        Schema::create('demande', function (Blueprint $table) {
+        Schema::create('contrat', function (Blueprint $table) {
             $table->string('code')->primary();
             $table->string('type_pret')->nullable();
             $table->string('montant_pet')->nullable();
