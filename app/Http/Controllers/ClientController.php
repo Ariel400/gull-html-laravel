@@ -27,6 +27,11 @@ class ClientController extends Controller
 
     }
 
+    public function demande(Request $request)
+    {
+        dd($request);
+    }
+
     /***
      * aller sur la page modifier mot de passe
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
@@ -53,18 +58,7 @@ class ClientController extends Controller
         ]);
     }
 
-    public function detail_commande(Contrat $commande)
-    {
-        // dd($commande);
-        // $articles = DB::table('detailcommandes')->where('id_commande', $commande->id)->get();
-        // $nbre_article = count($articles);
-
-        return view(
-            'client.orderdetail',
-            compact('commande')
-        );
-
-    }
+    
 
 
     /***

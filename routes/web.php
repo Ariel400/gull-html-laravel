@@ -45,6 +45,7 @@ Route::group([
     
     Route::view('profile', 'frontend.user-profile')->name('user-profile');
     
+    Route::post('/demande', 'ClientController@demande')->name('client.demande');
     Route::get('/historique', 'ClientController@historique')->name('client.historique');
     /* information personnelle */
     Route::get('/info', 'ClientController@info')->name('client.info');

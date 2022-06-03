@@ -36,8 +36,8 @@ class LoginController extends Controller
             'email' => request('email'),
             'password' => request('password'),
         ]);
-        // dd(request('password'));
         if ($resultat) {
+            // dd(request('password'));
             session()->flash('alerte', 'bienvenue ' . \Auth::user()->nom);
             session()->flash('type', 'success');
             /* si il y a un achat en cours */
@@ -49,6 +49,7 @@ class LoginController extends Controller
         }
         session()->flash('alerte', 'identifiants incorrects');
         session()->flash('type', 'error');
+        // dd(request('password'));
         return back()->withInput()->withErrors([
             'invalid' => 'Vos identifiants sont incorrects.',
         ]);

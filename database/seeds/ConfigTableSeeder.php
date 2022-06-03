@@ -23,6 +23,8 @@ class ConfigTableSeeder extends Seeder
                 'nom' => 'Credit Acess',
                 'couleur' => 'blue',
                 'logo' => 'loljpg',
+                'contact' => NULL,
+                'email' => NULL,
                 'created_at' => '2022-05-26 11:13:04',
                 'updated_at' => NULL,
             ),

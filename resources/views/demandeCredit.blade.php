@@ -45,7 +45,10 @@
             <div class="row">
                 <div class="col-md-12">
                     <!-- SmartWizard html -->
+                    <form id="form" action="{{route('client.demande')}}" method="post">
+                        @csrf
                     <div id="smartwizard">
+                       
                         <ul>
                             <li><a href="#step-1">Votre projet</a></li>
                             <li><a href="#step-2">Votre situation</a></li>
@@ -54,13 +57,14 @@
                         </ul>
 
                         <div>
+                            
                             <div id="step-1" class="">
-                                <form class="needs-validation" novalidate>
+                          
                                     <div class="form">
                                         <div class="row mb-3">
                                             <div class="col-md">
                                                 <label for="picker1">Quel type de prêt recherchez-vous ?</label>
-                                                <select class="form-control">
+                                                <select name="type_pret" class="form-control">
                                                     <option>Prêt personnel</option>
                                                     <option>Crédit auto neuve</option>
                                                     <option>Crédit auto occasion</option>
@@ -82,7 +86,7 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text">CFA</span>
                                                     </div>
-                                                    <input type="text" class="form-control" placeholder="Ex: 100000" aria-label="Amount (to the nearest dollar)">
+                                                    <input type="text" name="montant" class="form-control" placeholder="Ex: 100000" aria-label="Amount (to the nearest dollar)">
                                                     <div class="input-group-append">
                                                         <span class="input-group-text"><i class="i-Cash-register-2"></i></span>
                                                     </div>
@@ -92,7 +96,7 @@
                                         <div class="row">
                                             <div class="col-md">
                                                 <label for="picker1">Quelle serait la durée idéale de votre prêt ?</label>
-                                                <select class="form-control">
+                                                <select name="duree" class="form-control">
                                                     <option>1 an (12 mois)</option>
                                                     <option>2 an (24 mois)</option>
                                                     <option>3 an (12 mois)</option>
@@ -104,14 +108,14 @@
                                             <div class="col-md"></div>
                                         </div>
                                     </div>
-                                </form>
+                                
                             </div>
                             <div id="step-2" class="">
                                 <div class="form">
                                     <div class="row mb-3">
                                         <div class="col-md">
                                             <label for="picker1">Quelle est votre situation ?</label>
-                                            <select class="form-control">
+                                            <select name="situation" class="form-control">
                                                 <option>Prêt personnel</option>
                                                 <option>Crédit auto neuve</option>
                                                 <option>Crédit auto occasion</option>
@@ -124,7 +128,7 @@
                                         </div>
                                         <div class="col-md">
                                             <label for="validationCustom01">Combien avez-vous d'enfant(s) à charge ?</label>
-                                            <input type="number" class="form-control" id="validationCustom01" placeholder="Ex: 100000" value="" required>
+                                            <input name="nbre_enfant" type="number" class="form-control" id="validationCustom01" placeholder="Ex: 100000" value="" required>
                                             <div class="valid-feedback">
                                                 Looks good!
                                             </div>
@@ -137,7 +141,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">CFA</span>
                                                 </div>
-                                                <input type="text" class="form-control" placeholder="Ex: 100000" aria-label="Amount (to the nearest dollar)">
+                                                <input name="revenu_mensuel" type="text" class="form-control" placeholder="Ex: 100000" aria-label="Amount (to the nearest dollar)">
                                                 <div class="input-group-append">
                                                     <span class="input-group-text"><i class="i-Cash-register-2"></i></span>
                                                 </div>
@@ -147,12 +151,12 @@
                                             <label for="picker1">Avez-vous d'autre(s) revenu(s) chaque mois ?</label>
                                             <div class="row mt-2">
                                                 <label class="radio radio-outline-primary mr-4 ml-4">
-                                                    <input type="radio" name="radio" [value]="1" formControlName="radio">
+                                                    <input onchange="document.getElementById('div_autre_revenu').style='display:block'" id="autre_revenu_oui" type="radio" name="radio" [value]="1" formControlName="radio">
                                                     <span>Oui</span>
                                                     <span class="checkmark"></span>
                                                 </label>
                                                 <label class="radio radio-outline-secondary mr-4 ml-4">
-                                                    <input type="radio" name="radio" [value]="2" formControlName="radio">
+                                                    <input onchange="document.getElementById('div_autre_revenu').style.display='none'" id="autre_revenu_non" type="radio" name="radio" [value]="2" formControlName="radio">
                                                     <span>Non</span>
                                                     <span class="checkmark"></span>
                                                 </label>
@@ -160,17 +164,19 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md">
+                                        <div class="col-md" >
+                                           <div id="div_autre_revenu" style="display: none">
                                             <label for="picker1">À combien s'élèvent-ils chaque mois ?</label>
                                             <div class="input-group">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">CFA</span>
                                                 </div>
-                                                <input type="text" class="form-control" placeholder="Ex: 100000" aria-label="Amount (to the nearest dollar)">
+                                                <input name="autre_revenu_montant" type="text" class="form-control" placeholder="Ex: 100000" aria-label="Amount (to the nearest dollar)">
                                                 <div class="input-group-append">
                                                     <span class="input-group-text"><i class="i-Cash-register-2"></i></span>
                                                 </div>
                                             </div>
+                                           </div>
                                         </div>
                                         <div class="col-md">
                                         </div>
@@ -184,22 +190,22 @@
                                             <label for="picker1">Quel est votre secteur d'activité professionnel ?</label>
                                             <div class="row mt-2">
                                                 <label class="radio radio-outline-primary mr-4 ml-4">
-                                                    <input type="radio" name="radio" [value]="1" formControlName="radio">
+                                                    <input name="prive" type="radio" name="radio" [value]="1" formControlName="radio">
                                                     <span>Privé</span>
                                                     <span class="checkmark"></span>
                                                 </label>
                                                 <label class="radio radio-outline-secondary mr-4 ml-4">
-                                                    <input type="radio" name="radio" [value]="2" formControlName="radio">
+                                                    <input name="secteur" type="radio" name="radio" [value]="2" formControlName="radio">
                                                     <span>Public</span>
                                                     <span class="checkmark"></span>
                                                 </label>
                                                 <label class="radio radio-outline-primary mr-4 ml-4">
-                                                    <input type="radio" name="radio" [value]="3" formControlName="radio">
+                                                    <input name="secteur" type="radio" name="radio" [value]="3" formControlName="radio">
                                                     <span>Indépendant</span>
                                                     <span class="checkmark"></span>
                                                 </label>
                                                 <label class="radio radio-outline-secondary mr-4 ml-4">
-                                                    <input type="radio" name="radio" [value]="4" formControlName="radio">
+                                                    <input name="secteur" type="radio" name="radio" [value]="4" formControlName="radio">
                                                     <span>Autre</span>
                                                     <span class="checkmark"></span>
                                                 </label>
@@ -210,7 +216,7 @@
                                     <div class="row">
                                         <div class="col-md">
                                             <label for="picker1">Quelle est votre catégorie socio-professionnelle ?</label>
-                                            <select class="form-control">
+                                            <select name="categorie" class="form-control">
                                                 <option>Prêt personnel</option>
                                                 <option>Crédit auto neuve</option>
                                                 <option>Crédit auto occasion</option>
@@ -219,7 +225,7 @@
                                         </div>
                                         <div class="col-md">
                                             <label for="picker1">Quel est votre contrat de travail ?</label>
-                                            <select class="form-control">
+                                            <select name="contrat_travail" class="form-control">
                                                 <option>Prêt personnel</option>
                                                 <option>Crédit auto neuve</option>
                                                 <option>Crédit auto occasion</option>
@@ -238,17 +244,17 @@
                                             <label for="picker1">Concernant votre logement actuel, vous êtes :</label>
                                             <div class="row mt-2">
                                                 <label class="radio radio-outline-primary mr-4 ml-4">
-                                                    <input type="radio" name="radio" [value]="1" formControlName="radio">
+                                                    <input onchange="document.getElementById('loyer_mensuelle').style='display:block'" name="type_logement" type="radio" name="radio" [value]="1" formControlName="radio">
                                                     <span>Locataire</span>
                                                     <span class="checkmark"></span>
                                                 </label>
                                                 <label class="radio radio-outline-secondary mr-4 ml-4">
-                                                    <input type="radio" name="radio" [value]="2" formControlName="radio">
+                                                    <input onchange="document.getElementById('loyer_mensuelle').style='display:none'"  name="type_logement" type="radio" name="radio" [value]="2" formControlName="radio">
                                                     <span>Propriétaire</span>
                                                     <span class="checkmark"></span>
                                                 </label>
                                                 <label class="radio radio-outline-primary mr-4 ml-4">
-                                                    <input type="radio" name="radio" [value]="3" formControlName="radio">
+                                                    <input onchange="document.getElementById('loyer_mensuelle').style='display:none'"  name="type_logement" type="radio" name="radio" [value]="3" formControlName="radio">
                                                     <span>Autre</span>
                                                     <span class="checkmark"></span>
                                                 </label>
@@ -256,23 +262,31 @@
                                         </div>
                                         <div class="col-md">
                                             <label for="picker1">Avez-vous d'autres charges mensuelles (charges récurrentes comme des pensions alimentaires versées) ?</label>
-                                            <input type="text" class="form-control" id="validationCustom01" placeholder="" value="" required>
-                                            <div class="valid-feedback">
-                                                Looks good!
-                                            </div>
+                                            <div class="row">
+                                                <label class="radio radio-outline-primary mr-4 ml-4">
+                                                    <input onchange="document.getElementById('charge_mensuelle').style='display:block'" id="autre_charges" type="radio" name="radio" [value]="1" formControlName="radio">
+                                                    <span>Oui</span>
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                                <label class="radio radio-outline-secondary mr-4 ml-4">
+                                                    <input onchange="document.getElementById('charge_mensuelle').style='display:none'" id="autre_charges" type="radio" name="radio" [value]="2" formControlName="radio">
+                                                    <span>Non</span>
+                                                    <span class="checkmark"></span>
+                                                </label> 
+                                            </div>                                          
                                         </div>
                                     </div>
                                     <div class="row mb-3">
                                         <div class="col-md">
                                             <label for="picker1">Quelle est votre adresse postale ? </label>
-                                            <input type="text" class="form-control" id="validationCustom01" placeholder="" value="" required>
+                                            <input name="add_postal" type="text" class="form-control" id="validationCustom01" placeholder="" value="" required>
                                             <div class="valid-feedback">
                                                 Looks good!
                                             </div>
                                         </div>
                                         <div class="col-md">
                                             <label for="picker1">Dans quelle ville habitez-vous ?</label>
-                                            <input type="text" class="form-control" id="validationCustom01" placeholder="" value="" required>
+                                            <input name="ville" type="text" class="form-control" id="validationCustom01" placeholder="" value="" required>
                                             <div class="valid-feedback">
                                                 Looks good!
                                             </div>
@@ -280,40 +294,50 @@
 
                                     </div>
                                     <div class="row">
-                                        <div class="col-md">
-                                            <label for="picker1">Quel est le montant de ces charges mensuelles ?</label>
+                                        <div class="col-md" >
+                                            <div  id="loyer_mensuelle" style="display: none">
+                                                <label for="picker1">À combien s'élève votre loyer mensuel ?</label>
                                             <div class="input-group">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">CFA</span>
                                                 </div>
-                                                <input type="text" class="form-control" placeholder="" aria-label="Amount (to the nearest dollar)">
+                                                <input name="loyer_mensuel" type="text" class="form-control" placeholder="" aria-label="Amount (to the nearest dollar)">
                                                 <div class="input-group-append">
                                                     <span class="input-group-text"><i class="i-Cash-register-2"></i></span>
                                                 </div>
                                             </div>
+                                            </div>
+                                           
                                         </div>
                                         <div class="col-md">
-                                            <label for="picker1">À combien s'élève votre loyer mensuel ?</label>
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text">CFA</span>
-                                                </div>
-                                                <input type="text" class="form-control" placeholder="" aria-label="Amount (to the nearest dollar)">
-                                                <div class="input-group-append">
-                                                    <span class="input-group-text"><i class="i-Cash-register-2"></i></span>
+                                            <div
+                                                id="charge_mensuelle" style="display: none">
+                                                <label for="picker1">Quel est le montant de ces charges mensuelles ?</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text">CFA</span>
+                                                    </div>
+                                                    <input name="montant_charge" type="text" class="form-control" placeholder="" aria-label="Amount (to the nearest dollar)">
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text"><i class="i-Cash-register-2"></i></span>
+                                                    </div>
                                                 </div>
                                             </div>
+                                            
                                         </div>
 
                                     </div>
                                     <div class="row mt-4">
-                                        <button class="btn btn-lg btn-primary ladda-button basic-ladda-button mr-auto ml-auto" data-style="expand-right">Envoyer</button>
+                                        <button type="submit" class="btn btn-lg btn-primary ladda-button basic-ladda-button mr-auto ml-auto" data-style="expand-right">Envoyer</button>
                                     </div>
 
                                 </div>
                             </div>
+
                         </div>
+                
                     </div>
+                </form>
                 </div>
             </div>
 
@@ -324,6 +348,10 @@
 
 
  <script src="{{asset('assets/js/vendor/jquery.smartWizard.min.js')}}"></script>
+
+ <script>
+
+ </script>
 
 @endsection
 

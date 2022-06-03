@@ -77,5 +77,27 @@
             @yield('content')
         </main>
     </div>
+{{-- Bootstrap Notifications using Prologue Alerts & PNotify JS --}}
+  <script src="{{ asset('packages/noty/noty.js') }}"></script>
+
+  {{-- @if(Session::has('alerte')) --}}
+
+  <script type="text/javascript">
+    Noty.overrideDefaults({
+            layout: 'topRight',
+            theme: 'backstrap',
+            timeout: 2500,
+            closeWith: ['click', 'button'],
+        });
+
+        new Noty({
+            type: "{{ Session::get('type') }}",
+            text: "{!! str_replace('"', "'", Session::get('alerte')) !!}"
+        }).show();
+
+  </script>
+
+  @endif
+
 </body>
 </html>
