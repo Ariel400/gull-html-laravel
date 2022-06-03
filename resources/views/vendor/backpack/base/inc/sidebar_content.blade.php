@@ -3,8 +3,8 @@
         class="la la-home nav-icon"></i> {{ trans('backpack::base.dashboard') }}</a></li>
         @if(backpack_user()->hasRole(['admin','Gestionnaire Demande','Gestionnaire Contrat','DG']))
 
-                <li class="nav-title">Gestion des Contrats</li>
-                <li class='nav-item'><a class='nav-link' href='{{ backpack_url('contrat') }}'><i class='nav-icon la la-pen'></i> Contrats</a></li>
+                <li class="nav-title">Gestion des Demande</li>
+                <li class='nav-item'><a class='nav-link' href='{{ backpack_url('contrat') }}'><i class='nav-icon la la-pen'></i> Demandes</a></li>
    
         @endif
                 @if(backpack_user()->hasRole(['admin','Gestionnaire Demande','Gestionnaire contentieux','Gestionnaire Comptes','Gestionnaire Contrat','DG','Caissier']))
