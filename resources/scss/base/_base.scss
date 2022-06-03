@@ -1,0 +1,38 @@
+body {
+  overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+.wrapper {
+  margin-top: 150px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.show {
+  display: flex !important;
+}
+
+/* Works on Firefox */
+* {
+  scrollbar-width: 15px;
+  scrollbar-color: $color-orange whitesmoke;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 15px;
+}
+
+*::-webkit-scrollbar-track {
+  background: $color-orange;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: whitesmoke;
+  border-radius: 15px;
+  border: 3px solid $color-orange;
+}

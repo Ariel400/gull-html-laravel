@@ -1,0 +1,25 @@
+#mot-du-president {
+  font-family: 'Titillium Web', sans-serif;
+  width: 100%;
+
+  & .header-mot {
+    display: flex;
+    justify-content: center;
+
+    & img {
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top;
+      height: 15rem;
+      width: 15rem;
+    }
+  }
+
+  & p {
+    font-size: 18px;
+    line-height: 2rem;
+    text-align: justify;
+    font-weight: 400;
+    font-family: inherit;
+  }
+}

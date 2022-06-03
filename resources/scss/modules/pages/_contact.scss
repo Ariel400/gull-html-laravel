@@ -1,0 +1,35 @@
+#contact {
+  margin-bottom: 5rem;
+  & .callcentre {
+    background: url("/images/pages/contact.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 15rem;
+    margin-bottom: 3rem;
+
+    & h2 {
+      font-size: 3.5rem;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+      padding: 5rem 0 0 0.5rem;
+    }
+  }
+}
+
+
+@media all and (max-width: 480px) {
+  #contact {
+    margin-bottom: 2rem;
+
+    & .callcentre {
+      height: 8rem;
+      margin-bottom: 0;
+
+      & h2 {
+        font-size: 1.5rem;
+        padding: 1.8rem 0 0 0.5rem;
+      }
+    }
+  }
+
+}

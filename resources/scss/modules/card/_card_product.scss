@@ -1,0 +1,99 @@
+.card_product {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 25rem;
+  margin-bottom: 0.5rem;
+  transition: all .2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  & .top {
+    position: relative;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin-bottom: 5px;
+    border: 1px solid #eeeff0;
+    height: 70%;
+  }
+
+  & .name {
+    color: black;
+  }
+
+  & .current-price {
+    letter-spacing: .3px;
+    color: $color-orange;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  & .old-price {
+    letter-spacing: .3px;
+    color: #53585f;
+    text-decoration: line-through;
+  }
+
+  & a:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  & .btn {
+    border-radius: 0;
+    width: 100%;
+    color: white;
+    font-weight: 500;
+    text-transform: uppercase;
+    background: $color-orange;
+    margin-top: 0.5rem;
+    transition: all 0s .5s ease-in;
+
+    &:hover {
+      color: black;
+      background-color: darken($color-orange, 40);
+    }
+  }
+}
+
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .card_product {
+    height: 20rem;
+
+    & .flag {
+      font-size: .75rem;
+    }
+
+    & .name {
+      font-size: .75rem;
+    }
+
+    & .current-price, & .old-price {
+      font-size: .75rem;
+    }
+
+
+    & button {
+      font-size: .75rem;
+
+      &:hover {
+        color: black;
+        background-color: white;
+      }
+    }
+  }
+
+}

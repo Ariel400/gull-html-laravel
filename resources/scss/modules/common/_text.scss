@@ -1,0 +1,122 @@
+.styled_title {
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: .2px;
+
+  &::after {
+    content: " ";
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    display: table-cell;
+    padding: 9px 0 0 2px;
+    width: 82px;
+  }
+}
+
+.font-monterserat {
+  font-family: 'Montserrat', helvetica, sans-serif;
+}
+
+.main-title {
+  font-size: 2.1rem;
+  font-weight: 300;
+  line-height: 1.2;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: .9375rem;
+  text-align: center;
+}
+
+.main-sub-title {
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 1.2;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: .9375rem;
+  text-align: center;
+}
+
+.main-introduction {
+  font-size: 1.3rem;
+  font-weight: 300;
+  line-height: 1.55;
+  color: #6b6b6b;
+  text-align: center;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: .2px;
+}
+
+.main-text {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #6b6b6b;
+  text-align: justify-all;
+}
+
+/*
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .main-title {
+    font-size: 1.4rem;
+  }
+
+  .main-introduction {
+    font-size: 1rem;
+    text-align: justify;
+  }
+
+}
+
+/*
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .main-title {
+    font-size: 1.4rem;
+  }
+
+  .main-introduction {
+    font-size: 1rem;
+    text-align: justify;
+  }
+}
+
+/*
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .main-title {
+    font-size: 1.4rem;
+  }
+
+  .main-introduction {
+    font-size: 0.9rem;
+    text-align: justify;
+  }
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .main-title {
+    font-size: 1.4rem;
+  }
+
+  .main-introduction {
+    font-size: 0.9rem;
+    text-align: justify;
+  }
+}

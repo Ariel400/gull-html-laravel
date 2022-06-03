@@ -1,0 +1,35 @@
+.card-news {
+  height: 20rem;
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  color: $color-orange;
+
+  & .card-news-header {
+    height: 60%;
+    width: 100%;
+
+    & img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  & .card-news-body {
+    padding: 5px 5px;
+    height: 40%;
+    width: 100%;
+
+    & h5 {
+      font-family: 'Titillium Web', serif;
+      color: #111111;
+      line-height: 1.2em;
+      font-size: 1rem;
+      text-align: left;
+      font-weight: 400;
+    }
+  }
+
+
+}

@@ -1,0 +1,25 @@
+/* base */
+@import "base/index";
+/* common */
+@import "modules/common/index";
+
+/* Modules */
+/* header */
+@import "modules/header/index";
+/* breadcrumb */
+@import "modules/breadcrumb";
+
+/* cards */
+@import "modules/card/index";
+
+/* table */
+@import "modules/table_responsive";
+
+/* form */
+@import "modules/form/index";
+
+/* pages */
+@import "modules/pages/index";
+
+/* footer */
+@import "modules/footer/footer";

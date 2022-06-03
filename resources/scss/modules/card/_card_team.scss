@@ -1,0 +1,33 @@
+.card-team {
+  width: 100%;
+  height: 17rem;
+  overflow: hidden;
+
+  & .card-team-header {
+    width: 100%;
+    height: 14rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+
+    & img {
+      height: 12rem;
+      width: 12rem;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 50%;
+      box-shadow: 5px 0 26px 0 rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  & .card-team-body {
+    font-size: 0.7rem;
+    text-align: center;
+    height: 3rem;
+
+    & .name {
+      color: $color-orange;
+      font-weight: 600;
+    }
+  }
+}

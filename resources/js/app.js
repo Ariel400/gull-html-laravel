@@ -1,0 +1,1 @@
+window.splide = require('@splidejs/splide');

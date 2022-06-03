@@ -1,0 +1,178 @@
+#pandev {
+  position: relative;
+  width: 100%;
+  /* header */
+  & .header-pandev {
+    position: relative;
+    color: white;
+    background-color: #0b1320;
+    height: 20rem;
+    width: 100%;
+    /* edition */
+    & .header-edition {
+      position: absolute;
+      top: 30%;
+      left: 5%;
+      width: auto;
+      padding: 0 10px;
+
+      & span {
+        font-size: 2rem;
+        text-transform: uppercase;
+        color: $color-orange;
+        font-weight: bold;
+        line-height: 2rem;
+      }
+    }
+
+    /* title */
+    & .header-title {
+      height: 2rem;
+      position: absolute;
+      top: 45%;
+      left: 2%;
+      width: auto;
+      text-transform: uppercase;
+      color: #0b1320;
+      background-image: linear-gradient(
+                      to right,
+                      #462523 0,
+                      #cb9b51 22%,
+                      #f6e27a 45%,
+                      #f6f2c0 50%,
+                      #f6e27a 55%,
+                      #cb9b51 78%,
+                      #462523 100%
+      );
+      padding: 0 10px;
+
+      & p {
+        font-weight: bold;
+        line-height: 2rem;
+      }
+    }
+
+    /* Lieu */
+    & .header-place {
+      position: absolute;
+      bottom: 1rem;
+      left: 1rem;
+      color: #0b1320;
+
+      & p {
+        font-weight: bold;
+        padding: 4px;
+        background-color: white;
+        font-size: 1.1rem;
+        text-transform: uppercase;
+      }
+    }
+
+    /* Lieu */
+    & .header-img {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      color: #0b1320;
+      height: 100%;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 40% 100%);
+
+      & img {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    /* bouton */
+    & .header-btn {
+      position: absolute;
+      bottom: 2rem;
+      left: 21.5rem;
+      color: #0b1320;
+      background-color: $color-orange;
+
+      & a {
+        padding: 3px;
+        font-size: 1.1rem;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+
+/*
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+  #pandev {
+    /* header */
+    & .header-pandev {
+      height: 10rem;
+      /* edition */
+      & .header-edition {
+        position: absolute;
+        top: 30%;
+        left: 2rem;
+        width: auto;
+        padding: 0 5px;
+
+        & span {
+          font-size: 0.8rem;
+          line-height: 0.8rem;
+        }
+      }
+
+      /* title */
+      & .header-title {
+        position: absolute;
+        top: 50%;
+        left: 1rem;
+        width: 35%;
+        padding: 5px 5px;
+
+        & p {
+          font-size: 0.7rem;
+          font-weight: bold;
+          line-height: 0.7rem;
+        }
+      }
+
+      /* Lieu */
+      & .header-place {
+        position: absolute;
+        bottom: 0;
+        left: 1rem;
+        color: #0b1320;
+
+        & p {
+          font-weight: bold;
+          padding: 4px;
+          background-color: white;
+          font-size: 0.5rem;
+          text-transform: uppercase;
+        }
+      }
+
+      /* bouton */
+      & .header-btn {
+        bottom: 10%;
+        left: 70%;
+        & a {
+          font-size: 0.7rem;
+        }
+      }
+    }
+  }
+}

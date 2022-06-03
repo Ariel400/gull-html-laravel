@@ -1,0 +1,262 @@
+.header-top {
+  position: relative;
+  height: 6rem;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  & .searhbar {
+    position: absolute;
+    z-index: 2000;
+    top: 0;
+    width: 100%;
+    height: 11rem;
+    background-color: $color-orange;
+
+    & .close {
+      cursor: pointer;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: white;
+      height: 2rem;
+      width: 2rem;
+      border-radius: 50%;
+      color: $color-orange;
+
+      &:hover {
+        color: white;
+        background-color: $color-orange;
+      }
+
+      & .text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 1.2rem;
+      }
+    }
+
+    & .input {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      & input {
+        width: 50%;
+        border: 0;
+        color: white;
+        background-color: $color-orange;
+        border-bottom: 1px solid white;
+      }
+
+      & button {
+        padding: 10px;
+        border: none;
+        background-color: white;
+        color: $color-orange;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  & .header-top-left {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    width: 30%;
+    overflow: hidden;
+    padding: 0.5rem 0 0.5rem 0.5rem;
+
+    & .navigation-btn {
+      width: 4.2rem;
+      height: 4.2rem;
+      line-height: 4.2rem;
+      border-radius: 50%;
+      font-size: 1rem;
+      color: #fff;
+      text-transform: uppercase;
+      text-align: center;
+      background: #111;
+      cursor: pointer;
+      margin-right: 20px;
+    }
+
+    & .social {
+      display: flex;
+      flex-direction: column;
+      flex-flow: column;
+      justify-content: center;
+      align-items: center;
+
+      & > span {
+        font-size: .75rem;
+        text-transform: uppercase;
+        color: rgba(17, 17, 17, .4);
+        letter-spacing: .0625rem;
+        font-weight: 500;
+      }
+
+      & .social-ul {
+        display: flex;
+        flex-wrap: wrap;
+        list-style-type: none;
+
+        & .socials-item {
+          margin-right: 12px;
+
+          & i {
+            color: rgba(17, 17, 17, .4);
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  & .header-top-center {
+    display: flex;
+    justify-content: center;
+    width: 40%;
+    /* logo */
+    & img {
+      height: 3rem;
+    }
+  }
+
+  & .header-top-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    align-content: center;
+    width: 30%;
+
+    & i {
+      position: relative;
+      font-size: 2rem;
+    }
+
+    /* icone langue */
+    & .header-top-language {
+      display: flex;
+      align-items: center;
+      margin-right: 10px;
+
+      & span {
+        color: $color-black;
+        margin-right: 2px;
+        & i {
+          margin-right: 5px;
+          font-size: 20px;
+          color: $color-orange;
+        }
+
+        & a {
+          color: $color-black;
+
+          &.active {
+            color: $color-orange;
+          }
+        }
+      }
+    }
+
+    /* icone user*/
+    & .header-top-user {
+      margin-right: 10px;
+    }
+
+    /* searchbar */
+    & .header-top-search {
+      width: 100%;
+
+      & .bar {
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 1000;
+        background-color: $color-orange;
+        width: 5rem;
+        height: 11rem;
+
+        &:hover {
+          transition: background-color .25s ease-out;
+          background-color: darken($color-orange, 10);
+        }
+
+        & button {
+          position: absolute;
+          left: 25%;
+          bottom: 10px;
+          border: none;
+          background-color: inherit;
+
+          & i {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+  /* CSS */
+
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .header-top {
+    height: 4rem;
+    & .header-top-left {
+      padding: 0;
+      width: 20%;
+
+      & .navigation-btn {
+        color: #fff;
+        border-radius: 0;
+        background: #111;
+      }
+
+      & .social {
+        display: none;
+      }
+    }
+
+    /* center */
+    & .header-top-center {
+      justify-content: flex-start;
+      width: 90%;
+      /* logo */
+      & img {
+        height: 2rem;
+      }
+    }
+
+    /* right */
+    & .header-top-right {
+      display: none;
+    }
+  }
+}

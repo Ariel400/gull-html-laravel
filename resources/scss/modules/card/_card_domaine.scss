@@ -1,0 +1,42 @@
+.card-domaine {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 30rem;
+  width: 100%;
+  z-index: 4;
+  overflow: hidden;
+  
+  .card-domaine-header {
+    position: relative;
+    height: 70%;
+    width: 100%;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: -2rem;
+      left: 0;
+      height: 100%;
+      width: 100px;
+      background-color: $color-orange;
+      z-index: -1;
+    }
+
+    & img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 60%;
+      object-fit: cover;
+      object-position: top;
+      height: 100%;
+    }
+
+  }
+
+  & .card-domaine-body {
+    height: 30%;
+    margin-bottom: 5rem;
+  }
+}

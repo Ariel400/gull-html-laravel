@@ -1,0 +1,29 @@
+a {
+  color: $color-orange;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+    color: lighten($color-orange, 40);
+  }
+}
+
+input, textarea {
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.btn {
+  border-radius: 0;
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+ul li {
+  list-style: none;
+}
