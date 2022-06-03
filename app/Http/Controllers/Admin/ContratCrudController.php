@@ -29,7 +29,7 @@ class ContratCrudController extends CrudController
         $this->crud->denyAccess(['create']);
         CRUD::setModel(\App\Models\Contrat::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/contrat');
-        CRUD::setEntityNameStrings('contrat', 'contrats');
+        CRUD::setEntityNameStrings('contrat', 'Demandes');
         $this->crud->enableExportButtons();
     }
 

@@ -60,10 +60,10 @@ class RolesTableSeeder extends Seeder
             5 => 
             array (
                 'id' => 7,
-                'name' => 'Gestionnaire Litige',
+                'name' => 'Recouvreur',
                 'guard_name' => 'web',
                 'created_at' => '2021-09-12 11:59:53',
-                'updated_at' => '2021-09-12 11:59:53',
+                'updated_at' => '2022-06-03 19:13:54',
             ),
             6 => 
             array (
