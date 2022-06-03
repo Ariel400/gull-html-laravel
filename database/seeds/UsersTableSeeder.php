@@ -21,10 +21,10 @@ class UsersTableSeeder extends Seeder
             array (
                 'id' => 3,
                 'name' => 'sminth',
-                'email' => 'virtus225one@gmail.com',
+                'email' => 'virtus225oneh@gmail.com',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$DeptA760k0qWCUEQF/5MmuTQhIm.q0zzmnNqUQB3kUZ4GJGRDxlhC',
-                'remember_token' => 'QqbqC0pwsTirZwxSudjKu9d4hLhY1X8LXxheuCjRinqhFLDfxYsPEmoiSeg2',
+                'remember_token' => 'oDODVsOeL4U5u1O2J33avaNj2VmEhZsr4hTLSqPWLc5mfNwKMaiBNWv1Rs4J',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
@@ -32,7 +32,7 @@ class UsersTableSeeder extends Seeder
             array (
                 'id' => 6,
                 'name' => 'JM',
-                'email' => 'kadiojean1017@yahoo.com',
+                'email' => 'virtus225one@gmail.com',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$DeptA760k0qWCUEQF/5MmuTQhIm.q0zzmnNqUQB3kUZ4GJGRDxlhC',
                 'remember_token' => NULL,

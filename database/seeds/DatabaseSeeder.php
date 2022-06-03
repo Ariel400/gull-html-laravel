@@ -36,5 +36,6 @@ class DatabaseSeeder extends Seeder
         // $this->call(VideoTableSeeder::class);
         $this->call(ImageTableSeeder::class);
         $this->call(ConfigTableSeeder::class);
+        $this->call(ContratTableSeeder::class);
     }
 }

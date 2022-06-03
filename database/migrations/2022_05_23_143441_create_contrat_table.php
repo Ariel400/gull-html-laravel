@@ -15,14 +15,16 @@ class CreateContratTable extends Migration
     {
         Schema::create('contrat', function (Blueprint $table) {
             $table->string('code')->primary();
+            $table->string('id_client')->nullable();
+            $table->string('id_agent')->nullable();
             $table->string('type_pret')->nullable();
-            $table->string('montant_pet')->nullable();
+            $table->string('montant_pret')->nullable();
             $table->string('duree_pret')->nullable();
             $table->string('revenu_mensuel')->nullable();
             $table->string('nbr_enfant')->nullable();
             
-            $table->date('debut_emprunt');
-            $table->date('debut_fin');
+            $table->date('debut_emprunt')->nullable();
+            $table->date('fin_emprunt')->nullable();
             $table->string('autre_revenu')->nullable();
             $table->string('activite')->nullable();
             $table->string('categorie_socio')->nullable();
@@ -34,7 +36,7 @@ class CreateContratTable extends Migration
             $table->string('loyer_mensuel')->nullable();
             $table->string('status')->nullable();
             
-            $table->string('actif');          
+            $table->string('actif')->default(0);          
             $table->timestamps();
         });
     }

@@ -29,7 +29,7 @@ class ContratCrudController extends CrudController
         $this->crud->denyAccess(['create']);
         CRUD::setModel(\App\Models\Contrat::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/contrat');
-        CRUD::setEntityNameStrings('contrat', 'Demandes');
+        CRUD::setEntityNameStrings('contrt', 'Demandes');
         $this->crud->enableExportButtons();
     }
 
@@ -42,7 +42,7 @@ class ContratCrudController extends CrudController
     protected function setupListOperation()
     {
         // dd();
-        if(backpack_user()->hasRole(['Gestionnaire Contrat'])){
+        if(backpack_user()->hasRole(['Gestionnaire Demande'])){
 
             $this->crud->addClause('where', 'id_agent', '=',backpack_user()->id);
         }
@@ -65,35 +65,42 @@ class ContratCrudController extends CrudController
         ]);
 
         $this->crud->addColumn([
-            'name' => 'code_materiel',
-            'type' => 'select',
-            'label' => "nom materiel",
-            'entity' => 'materiel',
-            'attribute' => 'nom',
-            'model' => "App\Models\Produits",
+            'name' => 'created_at',
+            'type' => 'text',
+            'label' => "Date de demande du prêt",  
         ]);
 
         $this->crud->addColumn([
-            'name' => 'id_fournisseur',
-            'type' => 'select',
-            'label' => "nom fournisseur",
-            'entity' => 'partenaire',
-            'attribute' => 'nom',
-            'model' => "App\Models\Partenaires",
-        ]);
-
-        $this->crud->addColumn([
-            'name' => 'date_debut',
-            'type' => 'date',
-            'label' => "date de debut",
-
+            'name' => 'montant_pret',
+            'type' => 'text',
+            'label' => "Montant du prêt",  
         ]);
         $this->crud->addColumn([
-            'name' => 'date_fin',
-            'type' => 'date',
-            'label' => "date de fin ",
-
+            'name' => 'reste_payer',
+            'type' => 'text',
+            'label' => "Reste à Payer",  
         ]);
+        // $this->crud->addColumn([
+        //     'name' => 'id_fournisseur',
+        //     'type' => 'select',
+        //     'label' => "nom fournisseur",
+        //     'entity' => 'partenaire',
+        //     'attribute' => 'nom',
+        //     'model' => "App\Models\Partenaires",
+        // ]);
+
+        // $this->crud->addColumn([
+        //     'name' => 'date_debut',
+        //     'type' => 'date',
+        //     'label' => "date de debut",
+
+        // ]);
+        // $this->crud->addColumn([
+        //     'name' => 'date_fin',
+        //     'type' => 'date',
+        //     'label' => "date de fin ",
+
+        // ]);
         $this->crud->addColumn([
             'name' => 'actif',
             'type' => 'boolean',

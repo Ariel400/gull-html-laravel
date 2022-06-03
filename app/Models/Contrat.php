@@ -20,7 +20,8 @@ class Contrat extends Model
     protected $primaryKey = 'code';
     // public $timestamps = false;
     protected $guarded = ['code'];
-    protected $fillable = ['code', 'code_materiel', 'actif', 'id_client','date_debut', 'date_fin'];
+    protected $fillable = ['code','id_client','id_agent', 'montant_pret', 'actif', 'type_pret','duree_pret', 'revenu_mensuel','nbr_enfant','debut_emprunt','fin_emprunt',
+                            'autre_revenu','activite','categorie_socio','contrat_travail','type_logement','addresse','ville','autre_charge_mensuel','loyer_mensuel','status'];
     // protected $hidden = [];
     // protected $dates = [];
     protected $keyType = 'string';

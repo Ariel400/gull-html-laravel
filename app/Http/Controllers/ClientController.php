@@ -29,7 +29,45 @@ class ClientController extends Controller
 
     public function demande(Request $request)
     {
-        dd($request);
+        $type_pret=$request->type_pret;
+        $montant=$request->montant;
+        $duree=$request->duree;
+        // $situation=$request->situation;
+        $nbre_enfant=$request->nbre_enfant;
+        $revenu_mensuel=$request->revenu_mensuel;
+        $autre_revenu_montant=$request->autre_revenu_montant;
+        $secteur=$request->secteur;
+        $categorie=$request->categorie;
+        $contrat_travail=$request->contrat_travail;
+        $type_logement=$request->type_logement;
+        $add_postal=$request->add_postal;
+        $ville=$request->ville;
+        $loyer_mensuel=$request->loyer_mensuel;
+        $montant_charge=$request->montant_charge;
+
+        Contrat::insert([
+            'code' => $type_pret.''.$contrat_travail.''.$montant,
+            'type_pret'=>$type_pret,
+            'montant_pret'=>$montant,
+            'duree_pret'=>$duree,
+            // 'situation'=>$situation,
+            'nbr_enfant'=>$nbre_enfant,
+            'revenu_mensuel'=>$revenu_mensuel,
+            'autre_revenu'=>$autre_revenu_montant,
+            'activite'=>$secteur,
+            'categorie_socio'=>$categorie,
+            'contrat_travail'=>$contrat_travail,
+            'type_logement'=>$type_logement,
+            'addresse'=>$add_postal,
+            'ville'=>$ville,
+            'loyer_mensuel'=>$loyer_mensuel,
+            'autre_charge_mensuel'=>$montant_charge,
+
+        ]);
+        session()->flash('alerte', 'Votre demande a été pris en compte');
+        session()->flash('type', 'info');
+        return redirect('/contrat');
+
     }
 
     /***
