@@ -1,5 +1,5 @@
 ### Description du projet
-Panneau d'administration et site vitrine du site de **fondation225** 
+Projet de dematerialisation du processus de gestion de credit cas de **Credit access** 
 
 ### **Outils et Framework utilisés**
 <table>
