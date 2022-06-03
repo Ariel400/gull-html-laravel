@@ -13,12 +13,27 @@ class CreateContratTable extends Migration
      */
     public function up()
     {
-        Schema::create('contrat', function (Blueprint $table) {
+        Schema::create('demande', function (Blueprint $table) {
             $table->string('code')->primary();
-            $table->string('code_materiel');
-            $table->string('date_debut');
-            $table->string('date_fin');
-            $table->boolean('actif');
+            $table->string('type_pret')->nullable();
+            $table->string('montant_pet')->nullable();
+            $table->string('duree_pret')->nullable();
+            $table->string('revenu_mensuel')->nullable();
+            $table->string('nbr_enfant')->nullable();
+            
+            
+            $table->string('autre_revenu')->nullable();
+            $table->string('activite')->nullable();
+            $table->string('categorie_socio')->nullable();
+            $table->string('contrat_travail')->nullable();
+            $table->string('type_logement')->nullable();
+            $table->string('addresse')->nullable();
+            $table->string('ville')->nullable();
+            $table->string('autre_charge_mensuel')->nullable();
+            $table->string('loyer_mensuel')->nullable();
+            $table->string('status')->nullable();
+            
+            $table->string('actif');
             
             
             $table->timestamps();

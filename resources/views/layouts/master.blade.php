@@ -27,6 +27,8 @@
         <link id="gull-theme" rel="stylesheet" href="{{ asset('assets\fonts\iconsmind\iconsmind.css') }}">
         <link id="gull-theme" rel="stylesheet" href="{{ asset('assets/styles/css/themes/lite-purple.min.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/styles/vendor/perfect-scrollbar.css') }}">
+        <link rel="stylesheet" href="{{asset('packages/noty/noty.css')}}">
+        <link rel="stylesheet" href="{{asset('/css/noty_theme.css')}}">
         {{-- page specific css --}}
         @yield('page-css')
     </head>
@@ -170,7 +172,26 @@
         {{-- laravel js --}}
         {{-- <script src="{{ mix('assets/js/laravel/app.js') }}"></script>
         --}}
+        <script src="{{ asset('packages/noty/noty.js') }}"></script>
 
+        @if(Session::has('alerte'))
+      
+        <script type="text/javascript">
+          Noty.overrideDefaults({
+                  layout: 'topRight',
+                  theme: 'backstrap',
+                  timeout: 2500,
+                  closeWith: ['click', 'button'],
+              });
+      
+              new Noty({
+                  type: "{{ Session::get('type') }}",
+                  text: "{!! str_replace('"', "'", Session::get('alerte')) !!}"
+              }).show();
+      
+        </script>
+      
+        @endif
         @yield('bottom-js')
     </body>
 

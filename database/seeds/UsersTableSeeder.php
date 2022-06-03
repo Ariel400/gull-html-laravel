@@ -24,7 +24,7 @@ class UsersTableSeeder extends Seeder
                 'email' => 'virtus225one@gmail.com',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$DeptA760k0qWCUEQF/5MmuTQhIm.q0zzmnNqUQB3kUZ4GJGRDxlhC',
-                'remember_token' => 'PHnvfLE8MWPT809RMmvPOcqXDZxEr3CFS28IY6q5aZQnKRdr28sheCSBsh3C',
+                'remember_token' => 'QqbqC0pwsTirZwxSudjKu9d4hLhY1X8LXxheuCjRinqhFLDfxYsPEmoiSeg2',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
