@@ -13,13 +13,12 @@ class CreateArticlesTable extends Migration
      */
     public function up()
     {
-        Schema::create('articles', function (Blueprint $table) {
+        Schema::create('messages', function (Blueprint $table) {
             $table->id();
-            $table->string('cover');
-            $table->string('slug');
-            $table->string('titre');
-            $table->longText('contenu');
-            $table->softDeletes();
+            $table->string('idClient');
+            $table->string('idAgent');
+            $table->string('idRecepteur');
+            $table->string('message');
             $table->timestamps();
         });
     }
@@ -31,6 +30,6 @@ class CreateArticlesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('articles');
+        Schema::dropIfExists('messages');
     }
 }

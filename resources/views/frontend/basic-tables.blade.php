@@ -83,7 +83,7 @@
                                 <table id="user_table" class=" table table-bordered text-center">
                                     <thead>
                                         <tr>
-                                            <th scope="col">#</th>
+                                            <th scope="col">code</th>
                                             <th scope="col">Date demande</th>
                                             <th scope="col">Montant du crédit</th>
                                             <th scope="col">Date de l'emprunt</th>
@@ -94,17 +94,16 @@
                                     </thead>
                                     <tbody>
                                         @foreach (\DB::table('contrat')->get() as $item)
-                                            @dd($item)
-                                     
                                         <tr>
-                                            <th scope="row">1</th>
-                                            <td>Smith Doe</td>
+                                            <th scope="row">{{$item->code}}</th>
+                                            <td>{{$item->created_at}}</td>
                                             <td>
-                                                <img class="rounded-circle m-0 avatar-sm-table " src="{{asset('assets/images/faces/1.jpg')}}" alt="">
+                                                {{$item->montant_pet}} FCFA
                                             </td>
-                                            <td>Smith@gmail.com</td>
-                                            <td><span class="badge badge-success">Active</span></td>
-                                            <td><span class="badge badge-warning">Not Active</span></td>
+                                            <td>{{$item->debut_emprunt}}</td>
+                                            {{-- <td><span class="badge badge-success">Active</span></td> --}}
+                                            <td>{{$item->type_pret}}</span></td>
+                                            <td><span class="badge badge-warning">En cours</span></td>
                                             <td>
                                                 <a href="#" class="text-success mr-2" data-toggle="modal" data-target="#exampleModalLong">
                                                     <i class="nav-icon i-Eye font-weight-bold"></i>
