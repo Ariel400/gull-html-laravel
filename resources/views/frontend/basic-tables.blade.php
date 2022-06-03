@@ -35,16 +35,35 @@
                                 </a>
                             </div>
                         </div>
+                        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLongTitle">Détail</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        
+                                    </div>
+                                    <div class="modal-footer">
+                                        {{-- <button type="button" class="btn btn-primary" data-dismiss="modal">Fermer</button> --}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table id="user_table" class=" table table-bordered text-center">
                                     <thead>
                                         <tr>
                                             <th scope="col">#</th>
-                                            <th scope="col">Name</th>
-                                            <th scope="col">Avatar</th>
-                                            <th scope="col">Email</th>
-                                            <th scope="col">Status</th>
+                                            <th scope="col">Date demande</th>
+                                            <th scope="col">Montant du crédit</th>
+                                            <th scope="col">Date de l'emprunt</th>
+                                            <th scope="col">Type de demande</th>
+                                            <th scope="col">Statut</th>
                                             <th scope="col">Action</th>
                                         </tr>
                                     </thead>
@@ -57,12 +76,10 @@
                                             </td>
                                             <td>Smith@gmail.com</td>
                                             <td><span class="badge badge-success">Active</span></td>
+                                            <td><span class="badge badge-warning">Not Active</span></td>
                                             <td>
-                                                <a href="#" class="text-success mr-2">
-                                                    <i class="nav-icon i-Pen-2 font-weight-bold"></i>
-                                                </a>
-                                                <a href="#" class="text-danger mr-2">
-                                                    <i class="nav-icon i-Close-Window font-weight-bold"></i>
+                                                <a href="#" class="text-success mr-2" data-toggle="modal" data-target="#exampleModalLong">
+                                                    <i class="nav-icon i-Eye font-weight-bold"></i>
                                                 </a>
                                             </td>
                                         </tr>
@@ -74,12 +91,10 @@
                                             </td>
                                             <td>Jhon@gmail.com</td>
                                             <td><span class="badge badge-info">Pending</span></td>
+                                            <td><span class="badge badge-warning">Not Active</span></td>
                                             <td>
-                                                <a href="#" class="text-success mr-2">
-                                                    <i class="nav-icon i-Pen-2 font-weight-bold"></i>
-                                                </a>
-                                                <a href="#" class="text-danger mr-2">
-                                                    <i class="nav-icon i-Close-Window font-weight-bold"></i>
+                                                <a href="#" class="text-success mr-2" data-toggle="modal" data-target="#exampleModalLong">
+                                                    <i class="nav-icon i-Eye font-weight-bold"></i>
                                                 </a>
                                             </td>
                                         </tr>
@@ -94,15 +109,14 @@
 
                                             <td>Otto@gmail.com</td>
                                             <td><span class="badge badge-warning">Not Active</span></td>
+                                            <td><span class="badge badge-warning">Not Active</span></td>
                                             <td>
-                                                <a href="#" class="text-success mr-2">
-                                                    <i class="nav-icon i-Pen-2 font-weight-bold"></i>
-                                                </a>
-                                                <a href="#" class="text-danger mr-2">
-                                                    <i class="nav-icon i-Close-Window font-weight-bold"></i>
+                                                <a href="#" class="text-success mr-2" data-toggle="modal" data-target="#exampleModalLong">
+                                                    <i class="nav-icon i-Eye font-weight-bold"></i>
                                                 </a>
                                             </td>
                                         </tr>
+                                        
                                     </tbody>
                                 </table>
                             </div>

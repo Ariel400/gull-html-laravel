@@ -16,7 +16,7 @@ Route::view('forgot', 'sessions.forgot')->name('forgot');
 //frontend
 Route::view('accueil', 'accueil')->name('home');
 
-Route::view('nouvelle-demande', 'demandeCredit')->name('demande');
+
 
 /* pages statiques */
 Route::view('/contact', 'static.contact')->name('contact');
@@ -39,6 +39,8 @@ Route::group([
     Route::get('/dashboard', function () {
         return view('frontend.dashboardv2');
     })->name('dashboard_version_2');
+    
+    Route::view('nouvelle-demande', 'demandeCredit')->name('demande');
     
     Route::view('chat', 'frontend.chat')->name('chat');
     Route::view('contrat', 'frontend.basic-tables')->name('basic-tables');

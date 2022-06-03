@@ -21,7 +21,8 @@ class CreateContratTable extends Migration
             $table->string('revenu_mensuel')->nullable();
             $table->string('nbr_enfant')->nullable();
             
-            
+            $table->date('debut_emprunt');
+            $table->date('debut_fin');
             $table->string('autre_revenu')->nullable();
             $table->string('activite')->nullable();
             $table->string('categorie_socio')->nullable();
@@ -33,9 +34,7 @@ class CreateContratTable extends Migration
             $table->string('loyer_mensuel')->nullable();
             $table->string('status')->nullable();
             
-            $table->string('actif');
-            
-            
+            $table->string('actif');          
             $table->timestamps();
         });
     }
