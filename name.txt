@@ -1,0 +1,15 @@
+type_pret
+montant
+duree
+situation
+nbre_enfant
+revenu_mensuel
+autre_revenu_montant
+secteur
+categorie
+contrat_travail
+type_logement
+add_postal
+ville
+loyer_mensuel
+montant_charge

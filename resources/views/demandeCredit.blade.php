@@ -116,21 +116,19 @@
                                         <div class="col-md">
                                             <label for="picker1">Quelle est votre situation ?</label>
                                             <select name="situation" class="form-control">
-                                                <option>Prêt personnel</option>
-                                                <option>Crédit auto neuve</option>
-                                                <option>Crédit auto occasion</option>
-                                                <option>Prêt travaux</option>
-                                                <option>Crédit moto</option>
-                                                <option>micro-credit</option>
-                                                <option>Prêt immobilier</option>
-                                                <option>Rachat de crédit</option>
+                                                <option>Célibataire</option>
+                                                <option>Marié(e)</option>
+                                                <option>Divorcé(e)</option>
+                                                <option>Union libre</option>
+                                                <option>Veuf(ve)</option>
+                                                <option></option>
                                             </select>
                                         </div>
                                         <div class="col-md">
                                             <label for="validationCustom01">Combien avez-vous d'enfant(s) à charge ?</label>
-                                            <input name="nbre_enfant" type="number" class="form-control" id="validationCustom01" placeholder="Ex: 100000" value="" required>
+                                            <input name="nbre_enfant" type="number" class="form-control" id="validationCustom01" placeholder="3" value="" required>
                                             <div class="valid-feedback">
-                                                Looks good!
+                                                ok
                                             </div>
                                         </div>
                                     </div>
@@ -190,7 +188,7 @@
                                             <label for="picker1">Quel est votre secteur d'activité professionnel ?</label>
                                             <div class="row mt-2">
                                                 <label class="radio radio-outline-primary mr-4 ml-4">
-                                                    <input name="prive" type="radio" name="radio" [value]="1" formControlName="radio">
+                                                    <input name="secteur" type="radio" name="radio" [value]="1" formControlName="radio">
                                                     <span>Privé</span>
                                                     <span class="checkmark"></span>
                                                 </label>

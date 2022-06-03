@@ -7,6 +7,7 @@ $(document).ready(function () {
         l.start();
         setTimeout(function () {
             l.stop();
+  
         }, 3000);
     });
 

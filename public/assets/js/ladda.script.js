@@ -5,6 +5,7 @@ $(document).ready(function(){
         l.start();
         setTimeout(function() {
             l.stop();
+       
             document.getElementById("form").submit();
         }, 3000);
         
