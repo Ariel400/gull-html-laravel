@@ -12986,7 +12986,7 @@ $.widget( "ui.droppable", {
 
 		var draggable = $.ui.ddmanager.current;
 
-		// Bail if draggable and droppable are same element
+		//  if draggable and droppable are same element
 		if ( !draggable || ( draggable.currentItem ||
 				draggable.element )[ 0 ] === this.element[ 0 ] ) {
 			return;
@@ -13004,7 +13004,7 @@ $.widget( "ui.droppable", {
 
 		var draggable = $.ui.ddmanager.current;
 
-		// Bail if draggable and droppable are same element
+		//  if draggable and droppable are same element
 		if ( !draggable || ( draggable.currentItem ||
 				draggable.element )[ 0 ] === this.element[ 0 ] ) {
 			return;
@@ -13023,7 +13023,7 @@ $.widget( "ui.droppable", {
 		var draggable = custom || $.ui.ddmanager.current,
 			childrenIntersection = false;
 
-		// Bail if draggable and droppable are same element
+		//  if draggable and droppable are same element
 		if ( !draggable || ( draggable.currentItem ||
 				draggable.element )[ 0 ] === this.element[ 0 ] ) {
 			return false;
@@ -18444,7 +18444,7 @@ $.widget( "ui.tooltip", {
 		}
 
 		// Content can be updated multiple times. If the tooltip already
-		// exists, then just update the content and bail.
+		// exists, then just update the content and .
 		tooltipData = this._find( target );
 		if ( tooltipData ) {
 			tooltipData.tooltip.find( ".ui-tooltip-content" ).html( content );

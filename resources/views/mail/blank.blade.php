@@ -136,7 +136,7 @@
                                 <td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;">
                                     <div style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:14px;font-weight:400;line-height:24px;text-align:left;color:#637381;">
                                     Bonjour Mr/Mme {{$fullname ?? ''}} , <br>
-                                    Votre demande de credit bail à été validé
+                                    Votre demande de credit  à été validé
                                     voici vos identifiants de connexion <br>
                                     
                                     Email : {{$email}} <br>

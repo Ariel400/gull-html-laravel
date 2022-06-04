@@ -1493,7 +1493,7 @@ var Carousel = /*#__PURE__*/function () {
     }
 
     if (!activeElement || !nextElement) {
-      // Some weirdness is happening, so we bail
+      // Some weirdness is happening, so we 
       return;
     }
 

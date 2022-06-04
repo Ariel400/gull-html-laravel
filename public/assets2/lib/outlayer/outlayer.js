@@ -806,7 +806,7 @@ proto.remove = function( elems ) {
 
   this._emitCompleteOnItems( 'remove', removeItems );
 
-  // bail if no items to remove
+  //  if no items to remove
   if ( !removeItems || !removeItems.length ) {
     return;
   }
