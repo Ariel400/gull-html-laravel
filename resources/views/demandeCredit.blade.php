@@ -215,19 +215,28 @@
                                         <div class="col-md">
                                             <label for="picker1">Quelle est votre catégorie socio-professionnelle ?</label>
                                             <select name="categorie" class="form-control">
-                                                <option>Prêt personnel</option>
-                                                <option>Crédit auto neuve</option>
-                                                <option>Crédit auto occasion</option>
-                                                <option>Prêt travaux</option>
+                                                <option>Artisan</option>
+                                                <option>Cadre supérieur</option>
+                                                <option>Chef d'entreprise</option>
+                                                <option>Commerçant</option>
+                                                <option>Employé administratif</option>
+                                                <option>Employé commercial</option>
+                                                <option>Employé santé</option>
+                                                <option>Enseignant</option>
+                                                <option>Ouvrier</option>
+                                                <option>Personnel de service</option>
+                                                <option>Ouvrier agricole</option>
+                                                <option>Retraité</option>
+                                                <option>Autre</option>
                                             </select>
                                         </div>
                                         <div class="col-md">
                                             <label for="picker1">Quel est votre contrat de travail ?</label>
                                             <select name="contrat_travail" class="form-control">
-                                                <option>Prêt personnel</option>
-                                                <option>Crédit auto neuve</option>
-                                                <option>Crédit auto occasion</option>
-                                                <option>Prêt travaux</option>
+                                                <option>CDI</option>
+                                                <option>CDD</option>
+                                                <option>Intérim</option>
+                                                <option>Autre</option>
                                             </select>
                                         </div>
                                     </div>
