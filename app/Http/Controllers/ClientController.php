@@ -46,7 +46,8 @@ class ClientController extends Controller
         $montant_charge=$request->montant_charge;
 
         Contrat::insert([
-            'code' => $type_pret.''.$contrat_travail.''.$montant,
+            'id_client' => Auth()->user()->id,
+            'code' => Auth()->user()->id."11a".$montant,
             'type_pret'=>$type_pret,
             'montant_pret'=>$montant,
             'duree_pret'=>$duree,
@@ -62,6 +63,7 @@ class ClientController extends Controller
             'ville'=>$ville,
             'loyer_mensuel'=>$loyer_mensuel,
             'autre_charge_mensuel'=>$montant_charge,
+            'created_at' => now(),
 
         ]);
         session()->flash('alerte', 'Votre demande a été pris en compte');

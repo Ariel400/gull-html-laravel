@@ -45,7 +45,32 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        
+                                        <div class="col-md">
+                                            <div class="card o-hidden">
+                                                {{-- <div class="card-body">
+                                                    <h5 class="card-title">Card title</h5>
+                                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
+                                                    </p>
+                                                </div> --}}
+                                                <ul class="list-group list-group-flush">
+                                                    <li class="list-group-item">Type de crédit: </li>
+                                                    <li class="list-group-item">Date de demande: </li>
+                                                    <li class="list-group-item">Montant du crédit: </li>
+                                                    <li class="list-group-item">Durée du crédit: </li>
+                                                    <li class="list-group-item">Revenu mensuel: </li>
+                                                    <li class="list-group-item">Autre revenu: </li>
+                                                    <li class="list-group-item">Activité: </li>
+                                                    <li class="list-group-item">Catégorie socio-professionnelle: </li>
+                                                    <li class="list-group-item">Contrat de travail: </li>
+                                                    <li class="list-group-item">Type de logement: </li>
+                                                    <li class="list-group-item">Addresse postale:  </li>
+                                                    <li class="list-group-item">Ville: </li>
+                                                    <li class="list-group-item">Autre charge mensuel: </li>
+                                                    <li class="list-group-item">Loyer mensuel: </li>
+                                                    <li class="list-group-item">Statut: </li>
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="modal-footer">
                                         {{-- <button type="button" class="btn btn-primary" data-dismiss="modal">Fermer</button> --}}
@@ -58,7 +83,7 @@
                                 <table id="user_table" class=" table table-bordered text-center">
                                     <thead>
                                         <tr>
-                                            <th scope="col">#</th>
+                                            <th scope="col">code</th>
                                             <th scope="col">Date demande</th>
                                             <th scope="col">Montant du crédit</th>
                                             <th scope="col">Date de l'emprunt</th>
@@ -68,55 +93,24 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @foreach (\DB::table('contrat')->get() as $item)
                                         <tr>
-                                            <th scope="row">1</th>
-                                            <td>Smith Doe</td>
+                                            <th scope="row">{{$item->code}}</th>
+                                            <td>{{$item->created_at}}</td>
                                             <td>
-                                                <img class="rounded-circle m-0 avatar-sm-table " src="{{asset('assets/images/faces/1.jpg')}}" alt="">
+                                                {{$item->montant_pret}} FCFA
                                             </td>
-                                            <td>Smith@gmail.com</td>
-                                            <td><span class="badge badge-success">Active</span></td>
-                                            <td><span class="badge badge-warning">Not Active</span></td>
+                                            <td>{{$item->debut_emprunt}}</td>
+                                            {{-- <td><span class="badge badge-success">Active</span></td> --}}
+                                            <td>{{$item->type_pret}}</span></td>
+                                            <td><span class="badge badge-warning">En cours</span></td>
                                             <td>
                                                 <a href="#" class="text-success mr-2" data-toggle="modal" data-target="#exampleModalLong">
                                                     <i class="nav-icon i-Eye font-weight-bold"></i>
                                                 </a>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <th scope="row">2</th>
-                                            <td>Jhon Doe</td>
-                                            <td>
-                                                <img class="rounded-circle m-0 avatar-sm-table " src="{{asset('assets/images/faces/1.jpg')}}" alt="">
-                                            </td>
-                                            <td>Jhon@gmail.com</td>
-                                            <td><span class="badge badge-info">Pending</span></td>
-                                            <td><span class="badge badge-warning">Not Active</span></td>
-                                            <td>
-                                                <a href="#" class="text-success mr-2" data-toggle="modal" data-target="#exampleModalLong">
-                                                    <i class="nav-icon i-Eye font-weight-bold"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">3</th>
-                                            <td>Alex</td>
-                                            <td>
-
-                                                <img class="rounded-circle m-0 avatar-sm-table " src="{{asset('assets/images/faces/1.jpg')}}" alt="">
-
-                                            </td>
-
-                                            <td>Otto@gmail.com</td>
-                                            <td><span class="badge badge-warning">Not Active</span></td>
-                                            <td><span class="badge badge-warning">Not Active</span></td>
-                                            <td>
-                                                <a href="#" class="text-success mr-2" data-toggle="modal" data-target="#exampleModalLong">
-                                                    <i class="nav-icon i-Eye font-weight-bold"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

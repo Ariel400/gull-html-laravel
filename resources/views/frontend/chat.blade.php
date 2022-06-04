@@ -37,47 +37,28 @@
                     </div>
 
                     <div class="chat-content perfect-scrollbar" data-suppress-scroll-x="true">
+                        @foreach (\DB::table('messages')->get() as $item)
+                        @if($item->idClient == Auth()->user()->id)   
                         <div class="d-flex mb-4">
+                            @if($item->idClient != $item->idRecepteur)
+                            <img src="{{asset('assets/images/faces/1.jpg')}}" alt="" class="avatar-sm rounded-circle mr-3">
+                            @endif
                             <div class="message flex-grow-1">
                                 <div class="d-flex">
                                     <p class="mb-1 text-title text-16 flex-grow-1">Frank Powell</p>
                                     <span class="text-small text-muted">25 min ago</span>
                                 </div>
-                                <p class="m-0">Do you ever find yourself falling into the “discount trap?</p>
+                                <p class="m-0">{{$item->message}}</p>
                             </div>
+                            @if($item->idClient == $item->idRecepteur)
                             <img src="{{asset('assets/images/faces/13.jpg')}}" alt="" class="avatar-sm rounded-circle ml-3">
+                            @endif
                         </div>
+                        @endif
+                        @endforeach
 
-                        <div class="d-flex mb-4 user">
-                            <img src="{{asset('assets/images/faces/1.jpg')}}" alt="" class="avatar-sm rounded-circle mr-3">
-                            <div class="message flex-grow-1">
-                                <div class="d-flex">
-                                    <p class="mb-1 text-title text-16 flex-grow-1">Jhon Doe</p>
-                                    <span class="text-small text-muted">24 min ago</span>
-                                </div>
-                                <p class="m-0">Lorem ipsum dolor sit amet.</p>
-                            </div>
-                        </div>
-                        <div class="d-flex mb-4">
-                            <div class="message flex-grow-1">
-                                <div class="d-flex">
-                                    <p class="mb-1 text-title text-16 flex-grow-1">Frank Powell</p>
-                                    <span class="text-small text-muted">25 min ago</span>
-                                </div>
-                                <p class="m-0">Do you ever find yourself falling into the “discount trap?</p>
-                            </div>
-                            <img src="{{asset('assets/images/faces/13.jpg')}}" alt="" class="avatar-sm rounded-circle ml-3">
-                        </div>
-                        <div class="d-flex mb-4 user">
-                            <img src="{{asset('assets/images/faces/1.jpg')}}" alt="" class="avatar-sm rounded-circle mr-3">
-                            <div class="message flex-grow-1">
-                                <div class="d-flex">
-                                    <p class="mb-1 text-title text-16 flex-grow-1">Jhon Doe</p>
-                                    <span class="text-small text-muted">24 min ago</span>
-                                </div>
-                                <p class="m-0">Lorem ipsum dolor sit amet.</p>
-                            </div>
-                        </div>
+                   
+                    
 
                     </div>
 
