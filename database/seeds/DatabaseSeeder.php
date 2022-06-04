@@ -39,5 +39,8 @@ class DatabaseSeeder extends Seeder
         $this->call(MessagesTableSeeder::class);
         $this->call(ContratTableSeeder::class);
         $this->call(PaiementTableSeeder::class);
+        $this->call(TypePretTableSeeder::class);
+        $this->call(CategorieSocioTableSeeder::class);
+        $this->call(ContratTravailTableSeeder::class);
     }
 }
