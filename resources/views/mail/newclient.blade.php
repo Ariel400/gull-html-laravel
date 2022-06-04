@@ -94,7 +94,7 @@
                                             <tr>
                                               <td align='left'>
                                                 <a href='#'>
-                                                  <i style="font-weight: bold">Creditos</i>
+                                                  <i style="font-weight: bold">Credit Access</i>
                                                   {{-- <img align='left' alt='Logo' height='33' padding='5px' src='https://swu-cs-assets.s3.amazonaws.com/OSET/oxy-logo.png' width='120' /> --}}
                                                 </a>
                                               </td>
@@ -163,8 +163,8 @@
                                           <tbody>
                                             <tr>
                                               <td style='width:130px;'>
-                                                Creditos
-                                                {{-- <img alt='Creditos' height='auto' src='' style='border:1px solid #ccc;border-radius:5px;display:block;font-size:13px;height:auto;outline:none;text-decoration:none;width:100%;' width='130' /> --}}
+                                                Credit Access
+                                                {{-- <img alt='Credit Access' height='auto' src='' style='border:1px solid #ccc;border-radius:5px;display:block;font-size:13px;height:auto;outline:none;text-decoration:none;width:100%;' width='130' /> --}}
                                               </td>
                                             </tr>
                                           </tbody>
@@ -178,19 +178,19 @@
                                             {{$fullname ?? ''}}
                                           </a>
                                           <span>
-                                            Bonjour, Votre demande de crédit bail à été valider
+                                            Bonjour, Votre demande de crédit  à été valider
                                             <br />
                                             merci de vous connectez pour suivre votre contrat
                                             <br />
                                             <br />
-                                            <u>
+                                            {{-- <u>
                                               <strong>
                                                 INFORMATION DE CONNECTION
                                                 <br />
                                                 <br />
                                               </strong>
-                                            </u>
-                                            Email : {{$email}}
+                                            </u> --}}
+                                            {{-- Email : {{$email}}
                                             <u>
                                               <br />
                                             </u>
@@ -199,7 +199,7 @@
                                             <br />
                                             <strong>
                                               NB: merci de changer votre mot de passe lors de votre première connexion
-                                            </strong>
+                                            </strong> --}}
                                           </span>
                                         </div>
                                       </td>
@@ -209,7 +209,7 @@
                                         <table border='0' cellpadding='0' cellspacing='0' role='presentation' style='border-collapse:separate;line-height:100%;'>
                                           <tr>
                                             <td align='center' bgcolor='#ff6f6f' role='presentation' style='background-color:#ff6f6f;border:none;border-radius:5px;cursor:auto;padding:10px 25px;' valign='middle'>
-                                              <a href='bail.me/login' style='background:#ff6f6f;color:#ffffff;font-family:Oxygen, Helvetica neue, sans-serif;font-size:14px;font-weight:400;line-height:21px;margin:0;text-decoration:none;text-transform:none;' target='_blank'>
+                                              <a href='credit_access.test/login' style='background:#ff6f6f;color:#ffffff;font-family:Oxygen, Helvetica neue, sans-serif;font-size:14px;font-weight:400;line-height:21px;margin:0;text-decoration:none;text-transform:none;' target='_blank'>
                                                 Connexion
                                               </a>
                                             </td>
@@ -252,7 +252,7 @@
                             <tr>
                               <td align='center' style='font-size:0px;padding:5px 25px;word-break:break-word;'>
                                 <div style='color:#777777;font-family:Oxygen, Helvetica neue, sans-serif;font-size:14px;font-style:bold;font-weight:700;line-height:21px;text-align:center;'>
-                                  Creditos Inc
+                                  Credit Access Inc
                                 </div>
                               </td>
                             </tr>

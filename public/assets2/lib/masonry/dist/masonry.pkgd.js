@@ -63,7 +63,7 @@ function jQueryBridget( namespace, PluginClass, $ ) {
   if ( !PluginClass.prototype.option ) {
     // option setter
     PluginClass.prototype.option = function( opts ) {
-      // bail out if not an object
+      //  out if not an object
       if ( !$.isPlainObject( opts ) ){
         return;
       }
@@ -2123,7 +2123,7 @@ proto.remove = function( elems ) {
 
   this._emitCompleteOnItems( 'remove', removeItems );
 
-  // bail if no items to remove
+  //  if no items to remove
   if ( !removeItems || !removeItems.length ) {
     return;
   }

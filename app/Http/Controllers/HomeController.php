@@ -125,9 +125,9 @@ class HomeController extends Controller
         // dd($c);
         $nom =  $client->nom . ' ' . $client->prenom;
         $data = [
-            'subject' => 'Confirmation de demande de credit bail',
+            'subject' => 'Confirmation de demande de credit ',
             'from' => 'virtus225one@gmail.com',
-            'from_name' => 'Creditos.com',
+            'from_name' => 'Credit Access.com',
             'template' => 'mail.info',
             'info' => [
                 'fullname' => $client->nom . ' ' . $client->prenom,
@@ -178,9 +178,9 @@ class HomeController extends Controller
         // dd($c);
         $nom =  $client->nom . ' ' . $client->prenom;
         $data = [
-            'subject' => 'Confirmation de demande de credit bail',
+            'subject' => 'Confirmation de demande de credit ',
             'from' => 'virtus225one@gmail.com',
-            'from_name' => 'Creditos.com',
+            'from_name' => 'Credit Access.com',
             'template' => 'mail.info',
             'info' => [
                 'fullname' => $client->nom . ' ' . $client->prenom,

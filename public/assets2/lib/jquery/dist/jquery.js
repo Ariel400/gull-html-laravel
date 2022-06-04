@@ -5173,7 +5173,7 @@ jQuery.event = {
 
 		event.delegateTarget = this;
 
-		// Call the preDispatch hook for the mapped type, and let it bail if desired
+		// Call the preDispatch hook for the mapped type, and let it  if desired
 		if ( special.preDispatch && special.preDispatch.call( this, event ) === false ) {
 			return;
 		}
@@ -6855,7 +6855,7 @@ function defaultPrefilter( elem, props, opts ) {
 		}
 	}
 
-	// Bail out if this is a no-op like .hide().hide()
+	//  out if this is a no-op like .hide().hide()
 	propTween = !jQuery.isEmptyObject( props );
 	if ( !propTween && jQuery.isEmptyObject( orig ) ) {
 		return;

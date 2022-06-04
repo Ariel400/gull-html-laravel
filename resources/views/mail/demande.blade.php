@@ -100,7 +100,7 @@
                                             <tr>
                                               <td align='left'>
                                                 <a href='#'>
-                                                  <img align='left' alt='Creditos' height='33' padding='5px' src width='120' />
+                                                  <img align='left' alt='Credit Access' height='33' padding='5px' src width='120' />
                                                 </a>
                                               </td>
                                               <td align='right' style='vertical-align:bottom;' width='34px'>
@@ -161,7 +161,7 @@
                             <tr>
                               <td align='center' style='font-size:0px;padding:10px 25px;word-break:break-word;'>
                                 <div style='color:#4d4d4d;font-family:Oxygen, Helvetica neue, sans-serif;font-size:32px;font-weight:700;line-height:37px;text-align:center;'>
-                                  Contrat de credit Bail
+                                  Contrat de credit 
                                 </div>
                               </td>
                             </tr>
@@ -170,7 +170,7 @@
                                 <div style='color:#777777;font-family:Oxygen, Helvetica neue, sans-serif;font-size:14px;line-height:21px;text-align:center;'>
                                   Bonjour {{$fullname}},
                                   <br />
-                                  le contrat de credit bail de Mr/Mme <span>{{$nom_clt}}</span>&nbsp; <span th:text="${prenom}"></span> vous à été attribuer 
+                                  le contrat de credit  de Mr/Mme <span>{{$nom_clt}}</span>&nbsp; <span th:text="${prenom}"></span> vous à été attribuer 
                                   <br />
                                   Merci de vous connecter pour Avoir plus de détail
                                 </div>
@@ -283,7 +283,7 @@ White Step Three - https://assets.opensourceemails.com/imgs/oxygen/YSTlgtgaTSa89
                                         <table border='0' cellpadding='0' cellspacing='0' role='presentation' style='border-collapse:separate;line-height:100%;'>
                                           <tr>
                                             <td align='center' bgcolor='#ff6f6f' role='presentation' style='background-color:#ff6f6f;border:none;border-radius:5px;cursor:auto;padding:10px 25px;' valign='middle'>
-                                              <a href='bail.me/admin/login' style='background:#ff6f6f;color:#ffffff;font-family:Oxygen, Helvetica neue, sans-serif;font-size:14px;font-weight:400;line-height:21px;margin:0;text-decoration:none;text-transform:none;' target='_blank'>
+                                              <a href='credit_access.test/admin/login' style='background:#ff6f6f;color:#ffffff;font-family:Oxygen, Helvetica neue, sans-serif;font-size:14px;font-weight:400;line-height:21px;margin:0;text-decoration:none;text-transform:none;' target='_blank'>
                                                 connexion
                                               </a>
                                             </td>
@@ -341,7 +341,7 @@ White Step Three - https://assets.opensourceemails.com/imgs/oxygen/YSTlgtgaTSa89
                             <tr>
                               <td align='center' style='font-size:0px;padding:5px 25px;word-break:break-word;'>
                                 <div style='color:#777777;font-family:Oxygen, Helvetica neue, sans-serif;font-size:14px;font-style:bold;line-height:1;text-align:center;'>
-                                  Creditos
+                                  Credit Access
                                 </div>
                               </td>
                             </tr>

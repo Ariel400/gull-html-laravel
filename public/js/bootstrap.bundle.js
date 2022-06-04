@@ -1497,7 +1497,7 @@
       }
 
       if (!activeElement || !nextElement) {
-        // Some weirdness is happening, so we bail
+        // Some weirdness is happening, so we 
         return;
       }
 
