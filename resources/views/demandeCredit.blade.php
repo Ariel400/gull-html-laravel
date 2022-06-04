@@ -97,12 +97,12 @@
                                             <div class="col-md">
                                                 <label for="picker1">Quelle serait la durée idéale de votre prêt ?</label>
                                                 <select name="duree" class="form-control">
-                                                    <option>1 an (12 mois)</option>
-                                                    <option>2 an (24 mois)</option>
-                                                    <option>3 an (12 mois)</option>
-                                                    <option>4 an (12 mois)</option>
-                                                    <option>5 an (24 mois)</option>
-                                                    <option>6 an (12 mois)</option>
+                                                    <option value="12">1 an (12 mois)</option>
+                                                    <option value="24">2 an (24 mois)</option>
+                                                    <option value="36">3 an (36 mois)</option>
+                                                    <option value="48">4 an (48 mois)</option>
+                                                    <option value="60">5 an (60 mois)</option>
+                                                
                                                 </select>
                                             </div>
                                             <div class="col-md"></div>

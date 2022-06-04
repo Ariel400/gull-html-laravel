@@ -32,11 +32,12 @@ class DatabaseSeeder extends Seeder
         // $this->call(ArticlesTableSeeder::class);
         // $this->call(ArticleHasTagsTableSeeder::class);
         // $this->call(GestionPadevTableSeeder::class);
-        $this->call(PartenairesTableSeeder::class);
+        // $this->call(PartenairesTableSeeder::class);
         // $this->call(VideoTableSeeder::class);
         $this->call(ImageTableSeeder::class);
         $this->call(ConfigTableSeeder::class);
         $this->call(MessagesTableSeeder::class);
         $this->call(ContratTableSeeder::class);
+        $this->call(PaiementTableSeeder::class);
     }
 }

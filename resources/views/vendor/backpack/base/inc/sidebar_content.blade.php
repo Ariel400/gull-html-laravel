@@ -1,12 +1,17 @@
 {{-- <li class="nav-title">Production</li> --}}
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('dashboard') }}"><i
         class="la la-home nav-icon"></i> {{ trans('backpack::base.dashboard') }}</a></li>
-        @if(backpack_user()->hasRole(['admin','Gestionnaire Demande','Gestionnaire Contrat','DG']))
+        @if(backpack_user()->hasRole(['admin','Gestionnaire Demande','Gestionnaire Contrat','DG','Recouvreur']))
 
                 <li class="nav-title">Gestion des Demande</li>
                 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('contrat') }}'><i class='nav-icon la la-pen'></i> Demandes</a></li>
    
-        @endif
+                
+                @endif
+                @if(backpack_user()->hasRole(['admin','Caissier','Gestionnaire Contrat','DG','Recouvreur']))
+                <li class='nav-item'><a class='nav-link' href='{{ backpack_url('paiement') }}'><i class='nav-icon la la-dollar'></i> Versements</a></li>
+               @endif
+
                 @if(backpack_user()->hasRole(['admin','Gestionnaire Demande','Gestionnaire contentieux','Gestionnaire Comptes','Gestionnaire Contrat','DG','Caissier']))
 
                 <li class="nav-title">Gestion des Clients</li>
@@ -17,18 +22,18 @@
                 class="nav-icon la la-first-order"></i>&nbsp; commandes</a></li> --}}
 
 
-                @if(backpack_user()->hasRole(['admin','Commercial','Gestionnaire contentieux','DG']))
+                {{-- @if(backpack_user()->hasRole(['admin','Commercial','Gestionnaire contentieux','DG']))
 
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('partenaires') }}'><i class='nav-icon la la-support'></i> Fournisseur</a></li>
-@endif
-@if(backpack_user()->hasRole('admin','Commercial','DG'))
+@endif --}}
+{{-- @if(backpack_user()->hasRole('admin','Commercial','DG'))
 
 <li class="nav-title">Gestion Materiel</li>
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('categories') }}'><i class="las la-list"></i> Marque</a>
 </li>
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('produits') }}'><i class="lab la-product-hunt"></i>
         Materiels</a></li>
-@endif
+@endif --}}
 <!-- Users, Roles, Permissions -->
 
 

@@ -34,7 +34,7 @@ class CreateContratTable extends Migration
             $table->string('ville')->nullable();
             $table->string('autre_charge_mensuel')->nullable();
             $table->string('loyer_mensuel')->nullable();
-            $table->string('status')->nullable();
+            $table->string('status')->default('en attente')->nullable();
             
             $table->string('actif')->default(0);          
             $table->timestamps();

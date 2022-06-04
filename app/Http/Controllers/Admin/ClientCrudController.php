@@ -64,9 +64,9 @@ class ClientCrudController extends CrudController
         ]);
 
         $this->crud->addColumn([
-            'name' => 'active',
-            'type' => 'boolean',
-            'label' => "contrat valider ?"
+            'name' => 'solde',
+            'type' => 'text',
+            'label' => "Solde"
         ]);
     }
 

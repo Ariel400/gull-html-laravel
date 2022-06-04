@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Requests\ContratRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
+use Exception;
+use Mockery\Generator\StringManipulation\Pass\Pass;
 
 /**
  * Class ContratCrudController
@@ -27,9 +29,12 @@ class ContratCrudController extends CrudController
     public function setup()
     {
         $this->crud->denyAccess(['create']);
+        if(backpack_user()->hasRole(['Recouvreur'])){
+            $this->crud->denyAccess(['update','delete']);
+            }
         CRUD::setModel(\App\Models\Contrat::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/contrat');
-        CRUD::setEntityNameStrings('contrt', 'Demandes');
+        CRUD::setEntityNameStrings('contrat', 'Demandes');
         $this->crud->enableExportButtons();
     }
 
@@ -42,19 +47,11 @@ class ContratCrudController extends CrudController
     protected function setupListOperation()
     {
         // dd();
-        if(backpack_user()->hasRole(['Gestionnaire Demande'])){
+        if(backpack_user()->hasRole(['Recouvreur'])){
 
             $this->crud->addClause('where', 'id_agent', '=',backpack_user()->id);
         }
         // $this->crud->addClause('where',backpack_user()->id , '=',8);
-        $this->crud->addColumn([
-            'name' => 'id_agent',
-            'type' => 'select',
-            'label' => "Agent",
-            'entity' => 'agent',
-            'attribute' => 'name',
-            'model' => "App\User",
-        ]);
         $this->crud->addColumn([
             'name' => 'id_client',
             'type' => 'select',
@@ -63,12 +60,17 @@ class ContratCrudController extends CrudController
             'attribute' => 'nom',
             'model' => "App\Models\Clients",
         ]);
-
         $this->crud->addColumn([
-            'name' => 'created_at',
-            'type' => 'text',
-            'label' => "Date de demande du prêt",  
+            'name' => 'id_agent',
+            'type' => 'select',
+            'label' => "Agent",
+            'entity' => 'agent',
+            'attribute' => 'name',
+            'model' => "App\User",
         ]);
+      
+
+        
 
         $this->crud->addColumn([
             'name' => 'montant_pret',
@@ -79,6 +81,17 @@ class ContratCrudController extends CrudController
             'name' => 'reste_payer',
             'type' => 'text',
             'label' => "Reste à Payer",  
+        ]);
+        $this->crud->addColumn([
+            'name' => 'status',
+            'type' => 'text',
+            'label' => "Status",
+
+        ]);
+        $this->crud->addColumn([
+            'name' => 'created_at',
+            'type' => 'text',
+            'label' => "Date de demande du prêt",  
         ]);
         // $this->crud->addColumn([
         //     'name' => 'id_fournisseur',
@@ -101,12 +114,7 @@ class ContratCrudController extends CrudController
         //     'label' => "date de fin ",
 
         // ]);
-        $this->crud->addColumn([
-            'name' => 'actif',
-            'type' => 'boolean',
-            'label' => "valide ",
-
-        ]);
+       
     }
 
     /**
@@ -123,8 +131,21 @@ class ContratCrudController extends CrudController
             'name' => 'code',
             'type' => 'text',
             'label' => " code contrat ",
+            'attributes' => [
+            
+                'readonly'    => 'readonly',
+                'disabled'    => 'disabled',
+              ], 
         ]);
-
+        // CRUD::setFromDb(); // fields
+        $this->crud->addField([
+            'name' => 'id_client',
+            'type' => 'select',
+            'label' => "nom client",
+            'entity' => 'client',
+            'attribute' => 'nom',
+            'model' => "App\Models\Clients",
+        ]);
         $this->crud->addField([
             'name' => 'id_agent',
             'type' => 'select2',
@@ -136,7 +157,7 @@ class ContratCrudController extends CrudController
                 $lol=[];$i=0;
                 foreach ($query->get() as $key => $value) {
                    $m=\DB::table('model_has_roles')->where("model_id",$value->id)->first();
-                   if($m->role_id==6){
+                   if($m->role_id==7){
                        $lol[$i]=$value;
                         $i++;
                    }
@@ -147,45 +168,18 @@ class ContratCrudController extends CrudController
             }), 
         ]);
 
-        // CRUD::setFromDb(); // fields
-        $this->crud->addField([
-            'name' => 'id_client',
-            'type' => 'select',
-            'label' => "nom client",
-            'entity' => 'client',
-            'attribute' => 'nom',
-            'model' => "App\Models\Clients",
-        ]);
+        
 
-        $this->crud->addField([
-            'name' => 'code_materiel',
-            'type' => 'select2',
-            'label' => "nom materiel",
-            'entity' => 'materiel',
-            'attribute' => 'nom',
-            'model' => "App\Models\Produits",
-        ]);
+       
 
+        
         $this->crud->addField([
-            'name' => 'id_fournisseur',
-            'type' => 'select2',
-            'label' => "nom fournisseur",
-            'entity' => 'partenaire',
-            'attribute' => 'nom',
-            'model' => "App\Models\Partenaires",
-        ]);
-        $this->crud->addField([
-            'name' => 'date_debut',
-            'type' => 'date',
-            'label' => "date de debut",
+            'name' => 'duree_pret',
+            'type' => 'text',
+            'label' => "duree du prêt",
 
         ]);
-        $this->crud->addField([
-            'name' => 'date_fin',
-            'type' => 'date',
-            'label' => "date de fin ",
-
-        ]);
+       
         $this->crud->addField([
             'name' => 'actif',
             'type' => 'boolean',
@@ -199,22 +193,32 @@ class ContratCrudController extends CrudController
              /* envoie du mail */
             //  $pwd = ;
             // dd(request()->input('id_agent'));
-            $old= \DB::table('contrat')->where('code',request()->input('code'))->first();
-            if($old->actif==0){
+            $old= \DB::table('contrat')->where('code',request()->input('code'));
+            if($old->first()->actif==0){
+                $paie = \DB::table('paiement')->where('id_demande',$old->first()->code);
+                if(!$paie->first()){
+                    $paie->insert(["created_at"=>now(),"id_agent"=>request()->input('id_agent'),"id_demande"=>$old->first()->code,"montant"=>0,"reste_a_payer"=>$old->first()->montant_pret]);
+                    // dd($paie->first());
+                }
+                // dd("ok");
+                // $password ="passe123";
+                $client = \DB::table('clients')->where('id',request()->input('id_client'));
+                $client->update(["solde"=>intval($client->first()->solde)+intval($client->first()->solde)]);
 
-                $password ="passe123";
-                \DB::table('clients')->where('id',request()->input('id_client'))->update(["password"=>'$2y$10$joOPkbDGnedVWRUrsopYnOBgHgAZrwUOAM.W1seG7UKe2cfK3cNqS']);
-                $client = \DB::table('clients')->where('id',request()->input('id_client'))->first();
+                $old->update(["status"=>"en cours","debut_emprunt"=>now()]);
+
+
+                
                 $data = [
                    'subject' => 'Confirmation de demande de credit bail',
                    'from' => 'virtus225one@gmail.com',
                    'from_name' => 'Creditos.com',
                    'template' => 'mail.newclient',
                    'info' => [
-                       'fullname' => $client->nom . ' ' . $client->prenom,
-                       'email' => $client->email,
+                       'fullname' => $client->first()->nom . ' ' . $client->first()->prenom,
+                       'email' => $client->first()->email,
                        'date' => now(),
-                       'password' => $password,
+                       'password' => "jj",
                        // 'montant' => $mtn_total,
                        // 'lien' => 'http://www.martheetmarie.com/',
                        // 'nom_lien' => 'se connecter'
@@ -222,18 +226,18 @@ class ContratCrudController extends CrudController
                ];
                // dd($data);
                $details['type_email'] = 'confirmation';
-               $details['email'] = $client->email;
+               $details['email'] = $client->first()->email;
                $details['data'] = $data;
 
                $agent = \DB::table('users')->where('id',request()->input('id_agent'))->first();
                $data2 = [
                 'subject' => 'Confirmation de demande de credit bail',
                 'from' => 'virtus225one@gmail.com',
-                'from_name' => 'Creditos.com',
+                'from_name' => 'credit access',
                 'template' => 'mail.demande',
                 'info' => [
                     'fullname' => $agent->name,
-                    'nom_clt' => $client->nom . ' ' . $client->prenom,
+                    'nom_clt' => $client->first()->nom . ' ' . $client->first()->prenom,
                     'email' => $agent->email,
                     'date' => now(),
                     // 'montant' => $mtn_total,
@@ -245,8 +249,14 @@ class ContratCrudController extends CrudController
             $details2['type_email'] = 'confirmation';
             $details2['email'] = "virtus225one@gmail.com";
             $details2['data'] = $data2;
-               dispatch(new \App\Jobs\SendEmailJob($details));
-               dispatch(new \App\Jobs\SendEmailJob($details2));
+            try{
+
+                dispatch(new \App\Jobs\SendEmailJob($details));
+                dispatch(new \App\Jobs\SendEmailJob($details2));
+            }
+            catch(Exception $e){
+                // pass;
+            }
             }
             // dd(request()->input('actif'));
             

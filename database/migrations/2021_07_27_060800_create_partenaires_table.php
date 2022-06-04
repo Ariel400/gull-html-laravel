@@ -13,11 +13,13 @@ class CreatePartenairesTable extends Migration
      */
     public function up()
     {
-        Schema::create('partenaires', function (Blueprint $table) {
+        Schema::create('paiement', function (Blueprint $table) {
             $table->id();
-            $table->string("nom");
-            $table->longText("logo");
-            $table->string("url")->nullable();
+            // $table->string("date_paie");
+            $table->string('id_demande')->nullable();
+            $table->string('id_agent')->nullable();
+            $table->string("montant")->nullable();
+            $table->string("reste_a_payer")->nullable();
             $table->timestamps();
         });
     }

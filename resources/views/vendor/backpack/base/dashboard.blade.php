@@ -11,7 +11,7 @@
     $contrat_actif = \DB::table('contrat')->where("actif",1)->get();
     $contrat_nactif = \DB::table('contrat')->where("actif",0)->get();
     $lastProduits = App\Models\Produits::orderBy('created_at', 'DESC')->first();
-    $fournisseurs = \DB::table('partenaires')->get();
+    // $fournisseurs = \DB::table('partenaires')->get();
      // notice we use Widget::add() to add widgets to a certain group
     Widget::add()->to('before_content')->type('div')->class('row')->content([
         // notice we use Widget::make() to add widgets as content (not in a group)
@@ -46,9 +46,9 @@
             'type' => 'progress',
             'class'=> 'card border-0 text-black bg-secondary',
             'progressClass' => 'progress-bar',
-            'value' => count($fournisseurs),
+            'value' => "0",
             'description' => 'fournisseurs.',
-            'progress' => (int)count($fournisseurs),
+            'progress' => "100",
         ]),
     ]);
 

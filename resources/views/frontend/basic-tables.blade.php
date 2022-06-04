@@ -83,33 +83,37 @@
                                 <table id="user_table" class=" table table-bordered text-center">
                                     <thead>
                                         <tr>
-                                            <th scope="col">code</th>
+                                            <th scope="col">#</th>
                                             <th scope="col">Date demande</th>
                                             <th scope="col">Montant du crédit</th>
-                                            <th scope="col">Date de l'emprunt</th>
-                                            <th scope="col">Type de demande</th>
+                                            <th scope="col">Duree du prêt</th>
+                                            <th scope="col">Reste à payer</th>
                                             <th scope="col">Statut</th>
                                             <th scope="col">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach (\DB::table('contrat')->get() as $item)
+                                        @foreach (\DB::table('contrat')->get() as $i=>$item)
+                                        @if(Auth()->user()->id == $item->id_client)
                                         <tr>
-                                            <th scope="row">{{$item->code}}</th>
+                                            <th scope="row">{{$i+1}}</th>
                                             <td>{{$item->created_at}}</td>
                                             <td>
                                                 {{$item->montant_pret}} FCFA
                                             </td>
-                                            <td>{{$item->debut_emprunt}}</td>
+                                            <td>{{$item->duree_pret}}</td>
                                             {{-- <td><span class="badge badge-success">Active</span></td> --}}
-                                            <td>{{$item->type_pret}}</span></td>
-                                            <td><span class="badge badge-warning">En cours</span></td>
+                                            <td></span></td>
+                                            <td><span class="badge
+                                                 @if($item->status=='en attente') badge-warning @else  badge-warning @endif
+                                                 ">{{$item->status}}</span></td>
                                             <td>
                                                 <a href="#" class="text-success mr-2" data-toggle="modal" data-target="#exampleModalLong">
                                                     <i class="nav-icon i-Eye font-weight-bold"></i>
                                                 </a>
                                             </td>
                                         </tr>
+                                        @endif
                                         @endforeach
                                     </tbody>
                                 </table>
