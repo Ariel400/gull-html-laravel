@@ -24,6 +24,7 @@ class PaiementTableSeeder extends Seeder
                 'id_agent' => '8',
                 'montant' => '0',
                 'reste_a_payer' => '500',
+                'note' => NULL,
                 'created_at' => '2022-06-04 08:03:12',
                 'updated_at' => NULL,
             ),

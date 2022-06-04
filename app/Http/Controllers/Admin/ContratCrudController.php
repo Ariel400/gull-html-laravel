@@ -168,10 +168,7 @@ class ContratCrudController extends CrudController
             }), 
         ]);
 
-        
-
-       
-
+      
         
         $this->crud->addField([
             'name' => 'duree_pret',
@@ -249,14 +246,14 @@ class ContratCrudController extends CrudController
             $details2['type_email'] = 'confirmation';
             $details2['email'] = "virtus225one@gmail.com";
             $details2['data'] = $data2;
-            try{
+            // try{
 
                 dispatch(new \App\Jobs\SendEmailJob($details));
                 dispatch(new \App\Jobs\SendEmailJob($details2));
-            }
-            catch(Exception $e){
+            // }
+            // catch(Exception $e){
                 // pass;
-            }
+            // }
             }
             // dd(request()->input('actif'));
             

@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Paiement extends Model
 {
+    use \Venturecraft\Revisionable\RevisionableTrait;
     use CrudTrait;
 
     /*

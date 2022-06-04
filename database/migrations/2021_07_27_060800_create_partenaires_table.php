@@ -20,6 +20,7 @@ class CreatePartenairesTable extends Migration
             $table->string('id_agent')->nullable();
             $table->string("montant")->nullable();
             $table->string("reste_a_payer")->nullable();
+            $table->string("note")->nullable();
             $table->timestamps();
         });
     }

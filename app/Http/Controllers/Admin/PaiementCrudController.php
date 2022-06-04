@@ -122,6 +122,7 @@ class PaiementCrudController extends CrudController
         $this->crud->addField([
             'name' => 'id_agent',
             'type' => 'hidden',
+            'default' => backpack_user()->id
             // 'label' => "code demande",
         ]);
         
@@ -130,7 +131,15 @@ class PaiementCrudController extends CrudController
             'type' => 'number',
             'label' => "montant",
         ]);
-      
+        $this->crud->addField([   // select2_from_array
+            'name'        => 'note',
+            'label'       => "note *",
+            'type'        => 'select2_from_array',
+            'options'     => ['ajour' => 'à jour', 'retard' => 'retard', 'manquer' => 'non payer', 'moitié' => 'pas en totalité', 'abandon' => 'abandon'],
+            'allows_null' => false,
+            'default'     => 'ajour',
+            // 'allows_multiple' => true, // OPTIONAL; needs you to cast this to array in your model;
+        ]);
         /**
          * Fields can be defined using the fluent syntax or array syntax:
          * - CRUD::field('price')->type('number');

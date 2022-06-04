@@ -77,14 +77,14 @@ return [
     'breadcrumbs' => true,
 
     // Horizontal navbar classes. Helps make the admin panel look similar to your project's design.
-    /*'header_class' => 'app-header bg-white border-0 navbar',
+    'header_class' => 'app-header bg-warning border-0 navbar',
     'body_class' => 'app aside-menu-fixed sidebar-lg-show ',
     'sidebar_class' => 'sidebar sidebar-light sidebar-pills bg-white',
-    'footer_class' => 'app-footer d-print-none',*/
-    'header_class' => 'app-header navbar navbar-color bg-primary border-0',
-    'body_class' => 'app aside-menu-fixed sidebar-lg-show',
-    'sidebar_class' => 'sidebar', // add "bg-white sidebar-pills" for light sidebar
-    'footer_class' => 'app-footer d-none',
+    'footer_class' => 'app-footer d-print-none',
+    // 'header_class' => 'app-header navbar navbar-color bg-primary border-0',
+    // 'body_class' => 'app aside-menu-fixed sidebar-lg-show',
+    // 'sidebar_class' => 'sidebar', // add "bg-white sidebar-pills" for light sidebar
+    // 'footer_class' => 'app-footer d-none',
 
     // hide it with d-none
     // change background color with bg-dark, bg-primary, bg-secondary, bg-danger, bg-warning, bg-success, bg-info, bg-blue, bg-light-blue, bg-indigo, bg-purple, bg-pink, bg-red, bg-orange, bg-yellow, bg-green, bg-teal, bg-cyan, bg-white
