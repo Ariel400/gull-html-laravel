@@ -105,7 +105,7 @@
                                             {{-- <td><span class="badge badge-success">Active</span></td> --}}
                                             <td></span></td>
                                             <td><span class="badge
-                                                 @if($item->status=='en attente') badge-warning @else  badge-warning @endif
+                                                 @if($item->status=='en attente') badge-warning @else  badge-success @endif
                                                  ">{{$item->status}}</span></td>
                                             <td>
                                                 <a href="#" class="text-success mr-2" data-toggle="modal" data-target="#exampleModalLong">

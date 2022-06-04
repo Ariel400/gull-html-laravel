@@ -47,4 +47,7 @@ Route::group([
     Route::crud('contrat', 'ContratCrudController');
     Route::crud('revisions', 'RevisionsCrudController');
     Route::crud('paiement', 'PaiementCrudController');
+    Route::crud('type-pret', 'TypePretCrudController');
+    Route::crud('categorie-socio', 'CategorieSocioCrudController');
+    Route::crud('contrat-travail', 'ContratTravailCrudController');
 }); // this should be the absolute last line of this file

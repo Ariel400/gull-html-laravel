@@ -52,9 +52,13 @@
             <li class="nav-title">Paramètres de base</li>
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('config') }}'><i class='nav-icon la la-question'></i> Société Aquerante</a></li>
 {{-- <li class='nav-item'><a class='nav-link' href='{{ backpack_url('pays') }}'><i class='nav-icon la la-question'></i>Pays</a></li> --}}
-<li class='nav-item'><a class='nav-link' href='{{ backpack_url('villes') }}'><i class='nav-icon la la-question'></i> Villes</a></li>
+{{-- <li class='nav-item'><a class='nav-link' href='{{ backpack_url('villes') }}'><i class='nav-icon la la-question'></i> Villes</a></li> --}}
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('type-pret') }}'><i class='nav-icon la la-question'></i> Type prets</a></li>
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('categorie-socio') }}'><i class='nav-icon la la-question'></i> Categorie socios</a></li>
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('contrat-travail') }}'><i class='nav-icon la la-question'></i> Contrat travails</a></li>
 
 <li class="nav-title">Audit</li>
 
         <li class='nav-item'><a class='nav-link' href='{{ backpack_url('revisions') }}'><i class='nav-icon la la-file'></i> Revisions</a></li>
 @endif
+
