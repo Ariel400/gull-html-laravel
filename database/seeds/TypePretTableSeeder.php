@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class TypePretTableSeeder extends Seeder
+class PaiementTableSeeder extends Seeder
 {
 
     /**
@@ -14,8 +14,21 @@ class TypePretTableSeeder extends Seeder
     {
         
 
-        \DB::table('type_pret')->delete();
+        \DB::table('paiement')->delete();
         
+        \DB::table('paiement')->insert(array (
+            0 => 
+            array (
+                'id' => 1,
+                'id_demande' => 'Crédit auto neuveCrédit auto neuve500',
+                'id_agent' => '8',
+                'montant' => '0',
+                'reste_a_payer' => '500',
+                'note' => NULL,
+                'created_at' => '2022-06-04 08:03:12',
+                'updated_at' => NULL,
+            ),
+        ));
         
         
     }

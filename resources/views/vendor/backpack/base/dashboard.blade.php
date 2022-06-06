@@ -10,7 +10,8 @@
     $userCount = App\Clients::count();
     $contrat_actif = \DB::table('contrat')->where("actif",1)->get();
     $contrat_nactif = \DB::table('contrat')->where("actif",0)->get();
-    $lastProduits = App\Models\Produits::orderBy('created_at', 'DESC')->first();
+    $lastProduits = \DB::table('clients')->get();
+    // App\Models\Produits::orderBy('created_at', 'DESC')->first();
     // $fournisseurs = \DB::table('partenaires')->get();
      // notice we use Widget::add() to add widgets to a certain group
     Widget::add()->to('before_content')->type('div')->class('row')->content([
@@ -20,7 +21,7 @@
             ->class('card border-0 text-white bg-primary')
             ->progressClass('progress-bar')
             ->value(count($contrat_actif))
-            ->description('Contrat actifs.')
+            ->description('Prêts actifs.')
             ->progress(100*(int)count($contrat_actif)/1000),
         // alternatively, to use widgets as content, we can use the same add() method,
 
@@ -31,7 +32,7 @@
             'class'=> 'card border-0 text-white bg-dark',
             'progressClass' => 'progress-bar',
             'value' => count($contrat_nactif),
-            'description' => 'Contrat non actifs.',
+            'description' => 'Prêt non actifs.',
             'progress' => (int)count($contrat_nactif)/75*100,
         ]),
          Widget::make([
@@ -39,17 +40,17 @@
             'class'=> 'card border-0 text-white bg-info',
             'progressClass' => 'progress-bar',
             'value' => $productCount,
-            'description' => 'materiels.',
+            'description' => 'clients.',
             'progress' => (int)$productCount,
         ]),
-        Widget::make([
-            'type' => 'progress',
-            'class'=> 'card border-0 text-black bg-secondary',
-            'progressClass' => 'progress-bar',
-            'value' => "0",
-            'description' => 'fournisseurs.',
-            'progress' => "100",
-        ]),
+        // Widget::make([
+        //     'type' => 'progress',
+        //     'class'=> 'card border-0 text-black bg-secondary',
+        //     'progressClass' => 'progress-bar',
+        //     'value' => "0",
+        //     'description' => 'fournisseurs.',
+        //     'progress' => "100",
+        // ]),
     ]);
 
     $widgets['before_content'][] = [
@@ -62,7 +63,7 @@
                 // 'class' => 'col-md-6',
                 'controller' => \App\Http\Controllers\Admin\Charts\LatestUsersChartController::class,
                 'content' => [
-                    'header' => 'Les récents contrat', // optional
+                    'header' => 'Les récentes', // optional
                     // 'body' => 'This chart should make it obvious how many new users have signed up in the past 7 days.<br><br>', // optional
 
                 ]
