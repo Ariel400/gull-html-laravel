@@ -17095,3 +17095,25 @@ Did you mean one of these?
 #25 C:\\Users\\emman\\Biskrem\\Coding Universe\\Projects\\www\\bail\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
 #26 {main}
 "} 
+[2022-06-28 16:36:18] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at C:\\Users\\emman\\Biskrem\\Coding Universe\\Projects\\hackathon\\centre comoé\\app_credit\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php:192)
+[stacktrace]
+#0 C:\\Users\\emman\\Biskrem\\Coding Universe\\Projects\\hackathon\\centre comoé\\app_credit\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(118): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 C:\\Users\\emman\\Biskrem\\Coding Universe\\Projects\\hackathon\\centre comoé\\app_credit\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(98): Illuminate\\Log\\LogManager->get(NULL)
+#2 C:\\Users\\emman\\Biskrem\\Coding Universe\\Projects\\hackathon\\centre comoé\\app_credit\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(551): Illuminate\\Log\\LogManager->driver()
+#3 C:\\Users\\emman\\Biskrem\\Coding Universe\\Projects\\hackathon\\centre comoé\\app_credit\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Exceptions\\Handler.php(241): Illuminate\\Log\\LogManager->error('Class 'PackageV...', Array)
+#4 C:\\Users\\emman\\Biskrem\\Coding Universe\\Projects\\hackathon\\centre comoé\\app_credit\\app\\Exceptions\\Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Error))
+#5 C:\\Users\\emman\\Biskrem\\Coding Universe\\Projects\\hackathon\\centre comoé\\app_credit\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(366): App\\Exceptions\\Handler->report(Object(Error))
+#6 C:\\Users\\emman\\Biskrem\\Coding Universe\\Projects\\hackathon\\centre comoé\\app_credit\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(131): Illuminate\\Foundation\\Console\\Kernel->reportException(Object(Error))
+#7 C:\\Users\\emman\\Biskrem\\Coding Universe\\Projects\\hackathon\\centre comoé\\app_credit\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2022-06-28 16:36:18] laravel.ERROR: Class 'PackageVersions\Versions' not found {"exception":"[object] (Error(code: 0): Class 'PackageVersions\\Versions' not found at C:\\Users\\emman\\Biskrem\\Coding Universe\\Projects\\hackathon\\centre comoé\\app_credit\\config\\backpack\\base.php:137)
+[stacktrace]
+#0 C:\\Users\\emman\\Biskrem\\Coding Universe\\Projects\\hackathon\\centre comoé\\app_credit\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\LoadConfiguration.php(72): require()
+#1 C:\\Users\\emman\\Biskrem\\Coding Universe\\Projects\\hackathon\\centre comoé\\app_credit\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\LoadConfiguration.php(39): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->loadConfigurationFiles(Object(Illuminate\\Foundation\\Application), Object(Illuminate\\Config\\Repository))
+#2 C:\\Users\\emman\\Biskrem\\Coding Universe\\Projects\\hackathon\\centre comoé\\app_credit\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(237): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->bootstrap(Object(Illuminate\\Foundation\\Application))
+#3 C:\\Users\\emman\\Biskrem\\Coding Universe\\Projects\\hackathon\\centre comoé\\app_credit\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(310): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#4 C:\\Users\\emman\\Biskrem\\Coding Universe\\Projects\\hackathon\\centre comoé\\app_credit\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(127): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#5 C:\\Users\\emman\\Biskrem\\Coding Universe\\Projects\\hackathon\\centre comoé\\app_credit\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#6 {main}
+"} 
